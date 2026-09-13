@@ -12,14 +12,8 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23070a10'/><text x='50' y='68' font-size='52' font-weight='900' text-anchor='middle' fill='%2343d9ff' font-family='Arial'>GF</text></svg>">
 
 <style>
-/* ============================================================
-   RESET
-   ============================================================ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ============================================================
-   TEMA DEGISKENLERI
-   ============================================================ */
 :root {
     --bg: #070a10;
     --bg-secondary: #0a0e16;
@@ -69,9 +63,6 @@ body {
     transition: background .3s, color .3s;
 }
 
-/* ============================================================
-   ANIMASYONLU GRADIENT ARKA PLAN
-   ============================================================ */
 .gradient-bg {
     position: fixed;
     top: 0; left: 0;
@@ -109,9 +100,6 @@ body {
     50% { transform: translate(-100px, -50px); }
 }
 
-/* ============================================================
-   SCROLL PROGRESS
-   ============================================================ */
 .progress-bar {
     position: fixed;
     top: 0; left: 0;
@@ -122,18 +110,12 @@ body {
     transition: width .1s;
 }
 
-/* ============================================================
-   CONTAINER
-   ============================================================ */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
 a { color: var(--accent); text-decoration: none; transition: opacity .2s; }
 a:hover { opacity: .8; }
 img { max-width: 100%; display: block; }
 
-/* ============================================================
-   NAVBAR
-   ============================================================ */
 .navbar {
     position: sticky; top: 0; z-index: 100;
     background: rgba(7, 10, 16, .85);
@@ -177,9 +159,7 @@ img { max-width: 100%; display: block; }
 }
 .nav-links a:hover::after { width: 100%; }
 
-.nav-tools {
-    display: flex; gap: 8px; align-items: center;
-}
+.nav-tools { display: flex; gap: 8px; align-items: center; }
 .icon-btn {
     width: 36px; height: 36px;
     display: flex; align-items: center; justify-content: center;
@@ -199,9 +179,6 @@ img { max-width: 100%; display: block; }
     opacity: 1;
 }
 
-/* ============================================================
-   BUTONLAR
-   ============================================================ */
 .btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 10px 20px; border-radius: 10px;
@@ -244,9 +221,6 @@ img { max-width: 100%; display: block; }
     color: var(--text); border: none; cursor: pointer;
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero { padding: 90px 0 60px; }
 .hero-content { max-width: 850px; margin: 0 auto; text-align: center; }
 
@@ -291,9 +265,6 @@ img { max-width: 100%; display: block; }
     flex-wrap: wrap; margin-bottom: 60px;
 }
 
-/* ============================================================
-   STATS
-   ============================================================ */
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -325,9 +296,6 @@ img { max-width: 100%; display: block; }
     letter-spacing: 1px; font-weight: 600;
 }
 
-/* ============================================================
-   SECTIONS
-   ============================================================ */
 section { padding: 90px 0; }
 .section-header {
     text-align: center; margin-bottom: 60px;
@@ -349,9 +317,6 @@ section { padding: 90px 0; }
     max-width: 620px; margin: 0 auto;
 }
 
-/* ============================================================
-   FEATURES
-   ============================================================ */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -389,18 +354,9 @@ section { padding: 90px 0; }
     font-size: 24px;
     margin-bottom: 20px;
 }
-.feature h3 {
-    font-size: 18px; font-weight: 800;
-    margin-bottom: 10px;
-}
-.feature p {
-    font-size: 14px; color: var(--muted);
-    line-height: 1.65;
-}
+.feature h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
+.feature p { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
-/* ============================================================
-   SCREENSHOTS + LIGHTBOX
-   ============================================================ */
 .screenshots {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -424,14 +380,12 @@ section { padding: 90px 0; }
     background: linear-gradient(135deg, var(--panel2), var(--panel3));
     display: flex; align-items: center; justify-content: center;
     color: var(--muted); font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-weight: 700; letter-spacing: 1px;
 }
 .screenshot-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(0,0,0,.6), transparent 50%);
-    opacity: 0;
-    transition: opacity .3s;
+    opacity: 0; transition: opacity .3s;
     display: flex; align-items: flex-end; justify-content: space-between;
     padding: 16px 20px; color: #fff;
 }
@@ -440,11 +394,9 @@ section { padding: 90px 0; }
 .lightbox {
     position: fixed; inset: 0;
     background: rgba(0, 0, 0, .9);
-    z-index: 9999;
-    display: none;
+    z-index: 9999; display: none;
     align-items: center; justify-content: center;
-    cursor: zoom-out;
-    padding: 40px;
+    cursor: zoom-out; padding: 40px;
 }
 .lightbox.open { display: flex; }
 .lightbox-content {
@@ -453,9 +405,7 @@ section { padding: 90px 0; }
     background: var(--panel2);
     display: flex; align-items: center; justify-content: center;
     font-size: 24px; color: var(--muted);
-    font-weight: 700;
-    aspect-ratio: 16/9;
-    width: 100%;
+    font-weight: 700; aspect-ratio: 16/9; width: 100%;
 }
 .lightbox-close {
     position: absolute; top: 20px; right: 24px;
@@ -464,119 +414,82 @@ section { padding: 90px 0; }
     line-height: 1;
 }
 
-/* ============================================================
-   SHOWCASE
-   ============================================================ */
 .showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    gap: 60px; align-items: center;
 }
 .showcase.reverse { direction: rtl; }
 .showcase.reverse > * { direction: ltr; }
 
 .showcase-content h2 {
     font-size: clamp(26px, 3.5vw, 38px);
-    font-weight: 900;
-    letter-spacing: -.02em;
-    margin: 12px 0 18px;
-    line-height: 1.15;
+    font-weight: 900; letter-spacing: -.02em;
+    margin: 12px 0 18px; line-height: 1.15;
 }
 .showcase-content p {
-    font-size: 16px;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 16px;
+    font-size: 16px; color: var(--muted);
+    line-height: 1.7; margin-bottom: 16px;
 }
 .showcase-content p.highlight {
     padding: 14px 18px;
     background: var(--panel);
     border-left: 3px solid var(--accent);
-    border-radius: 8px;
-    color: var(--text);
-    font-size: 14px;
+    border-radius: 8px; color: var(--text); font-size: 14px;
 }
 
 .showcase-list {
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px 16px;
-    margin-top: 20px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px 16px; margin-top: 20px;
 }
 .showcase-list li {
-    font-size: 14px;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 14px; color: var(--muted);
+    display: flex; align-items: center; gap: 8px;
 }
 .showcase-list li::before {
-    content: '\2713';
-    color: var(--good);
-    font-weight: 800;
-    flex-shrink: 0;
+    content: '\2713'; color: var(--good);
+    font-weight: 800; flex-shrink: 0;
 }
 
 .showcase-visual { position: relative; }
 .visual-box {
     background: var(--panel);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
+    border-radius: 16px; overflow: hidden;
     box-shadow: 0 20px 60px var(--shadow);
 }
 .visual-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    display: flex; align-items: center; gap: 14px;
     padding: 12px 18px;
     background: var(--panel2);
     border-bottom: 1px solid var(--border);
 }
 .visual-dots { display: flex; gap: 6px; }
-.visual-dots span {
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--panel3);
-}
+.visual-dots span { width: 10px; height: 10px; border-radius: 50%; background: var(--panel3); }
 .visual-dots span:nth-child(1) { background: #ff657a; }
 .visual-dots span:nth-child(2) { background: #ffc85c; }
 .visual-dots span:nth-child(3) { background: #56e39b; }
 .visual-title {
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--muted);
-    text-transform: uppercase;
+    font-size: 12px; font-weight: 800;
+    color: var(--muted); text-transform: uppercase;
     letter-spacing: 1.5px;
 }
-.visual-body {
-    padding: 32px;
-    min-height: 320px;
-}
+.visual-body { padding: 32px; min-height: 320px; }
 
-/* Forge Modu */
 .forge-circle {
-    width: 140px;
-    height: 140px;
-    margin: 20px auto;
-    border-radius: 50%;
+    width: 140px; height: 140px;
+    margin: 20px auto; border-radius: 50%;
     background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 900;
-    color: #000;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; font-weight: 900; color: #000;
     position: relative;
     box-shadow: 0 0 60px var(--glow);
 }
 .forge-pulse {
-    position: absolute;
-    inset: -20px;
+    position: absolute; inset: -20px;
     border: 2px solid var(--accent);
-    border-radius: 50%;
-    opacity: 0;
+    border-radius: 50%; opacity: 0;
     animation: forgePulse 2s ease-out infinite;
 }
 @keyframes forgePulse {
@@ -585,14 +498,9 @@ section { padding: 90px 0; }
 }
 .forge-status {
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 24px;
-    font-size: 13px;
-    color: var(--good);
-    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; margin-top: 24px;
+    font-size: 13px; color: var(--good); font-weight: 600;
 }
 .status-dot {
     width: 8px; height: 8px; border-radius: 50%;
@@ -601,17 +509,9 @@ section { padding: 90px 0; }
     animation: pulse 2s infinite;
 }
 
-/* GPU Specs */
-.gpu-specs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 20px;
-}
+.gpu-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
 .spec-item {
-    display: flex;
-    gap: 12px;
-    align-items: center;
+    display: flex; gap: 12px; align-items: center;
     padding: 12px;
     background: var(--panel);
     border: 1px solid var(--border);
@@ -621,44 +521,29 @@ section { padding: 90px 0; }
 .spec-title { font-size: 13px; font-weight: 700; }
 .spec-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
-/* GPU Panel */
 .gpu-panel { padding: 24px 32px; }
 .slider-group { margin-bottom: 20px; }
 .slider-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 8px;
+    display: flex; justify-content: space-between;
+    font-size: 13px; font-weight: 600; margin-bottom: 8px;
 }
 .slider-value { color: var(--accent); }
 .slider-track {
-    height: 6px;
-    background: var(--panel2);
-    border-radius: 3px;
-    overflow: hidden;
+    height: 6px; background: var(--panel2);
+    border-radius: 3px; overflow: hidden;
 }
 .slider-fill {
     height: 100%;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
-    border-radius: 3px;
-    transition: width .3s;
+    border-radius: 3px; transition: width .3s;
 }
 
-/* Benchmark */
 .bench-panel { padding: 20px; }
-.bench-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-}
+.bench-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .bench-table th {
-    padding: 10px;
-    text-align: left;
-    font-size: 11px;
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    padding: 10px; text-align: left;
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 1px;
     border-bottom: 1px solid var(--border);
 }
 .bench-table td {
@@ -669,52 +554,31 @@ section { padding: 90px 0; }
 .bench-table td.good { color: var(--good); font-weight: 700; }
 .bench-table tr:last-child td { border-bottom: none; }
 
-/* Advisor */
 .advisor-panel { padding: 28px; }
 .advisor-line {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    display: flex; align-items: center; gap: 12px;
     margin-bottom: 14px;
 }
-.advisor-key {
-    font-size: 13px;
-    font-weight: 700;
-    width: 50px;
-    color: var(--muted);
-}
-.advisor-val {
-    font-size: 13px;
-    font-weight: 700;
-    width: 50px;
-    color: var(--text);
-}
+.advisor-key { font-size: 13px; font-weight: 700; width: 50px; color: var(--muted); }
+.advisor-val { font-size: 13px; font-weight: 700; width: 50px; color: var(--text); }
 .advisor-bar-mini {
-    flex: 1;
-    height: 6px;
-    background: var(--panel2);
-    border-radius: 3px;
-    overflow: hidden;
+    flex: 1; height: 6px; background: var(--panel2);
+    border-radius: 3px; overflow: hidden;
 }
 .advisor-bar-mini span {
-    display: block;
-    height: 100%;
+    display: block; height: 100%;
     background: linear-gradient(90deg, var(--accent), var(--accent2));
     border-radius: 3px;
 }
 .advisor-verdict {
-    margin-top: 22px;
-    padding: 16px;
+    margin-top: 22px; padding: 16px;
     background: var(--panel2);
     border-left: 3px solid var(--accent);
-    border-radius: 8px;
-    font-size: 13px;
-    line-height: 1.7;
-    color: var(--muted);
+    border-radius: 8px; font-size: 13px;
+    line-height: 1.7; color: var(--muted);
 }
 .advisor-verdict strong { color: var(--text); }
 
-/* Modes Grid */
 .modes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -738,51 +602,28 @@ section { padding: 90px 0; }
     box-shadow: 0 0 40px var(--glow);
 }
 .mode-badge {
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 100px;
-    font-size: 11px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
+    display: inline-block; padding: 5px 12px;
+    border-radius: 100px; font-size: 11px;
+    font-weight: 900; letter-spacing: 1.5px;
     margin-bottom: 16px;
 }
 .mode-safe { background: #2a5a3a; color: #d6ffe6; }
 .mode-balanced { background: #2a4a6a; color: #d6eaff; }
 .mode-aggressive { background: #6a2a3a; color: #ffe6ea; }
-
-.mode-card h3 {
-    font-size: 22px;
-    font-weight: 900;
-    margin-bottom: 10px;
-}
-.mode-desc {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.6;
-    margin-bottom: 18px;
-}
-.mode-list {
-    list-style: none;
-    margin-bottom: 20px;
-}
+.mode-card h3 { font-size: 22px; font-weight: 900; margin-bottom: 10px; }
+.mode-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 18px; }
+.mode-list { list-style: none; margin-bottom: 20px; }
 .mode-list li {
-    font-size: 13px;
-    color: var(--text);
-    padding: 6px 0 6px 22px;
-    position: relative;
+    font-size: 13px; color: var(--text);
+    padding: 6px 0 6px 22px; position: relative;
 }
 .mode-list li::before {
-    content: '\2713';
-    position: absolute;
-    left: 0;
-    color: var(--good);
-    font-weight: 800;
+    content: '\2713'; position: absolute;
+    left: 0; color: var(--good); font-weight: 800;
 }
 .mode-risk {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between;
+    padding-top: 16px; border-top: 1px solid var(--border);
     font-size: 13px;
 }
 .risk-label { color: var(--muted); }
@@ -790,9 +631,6 @@ section { padding: 90px 0; }
 .risk-medium { color: var(--warn); font-weight: 800; }
 .risk-high { color: var(--red); font-weight: 800; }
 
-/* ============================================================
-   DOWNLOAD BOX
-   ============================================================ */
 .download-box {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -823,19 +661,19 @@ section { padding: 90px 0; }
 }
 .download-buttons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
     gap: 12px;
     margin-bottom: 24px;
 }
 .download-btn {
-    padding: 16px 20px;
+    padding: 20px 24px;
     background: var(--panel2);
     border: 1px solid var(--border);
     border-radius: 12px;
     text-align: left;
     cursor: pointer;
     transition: all .25s;
-    display: flex; align-items: center; gap: 14px;
+    display: flex; align-items: center; gap: 16px;
     color: var(--text); text-decoration: none;
 }
 .download-btn:hover {
@@ -843,11 +681,12 @@ section { padding: 90px 0; }
     background: var(--panel3);
     transform: translateY(-2px);
     opacity: 1;
+    box-shadow: 0 12px 32px var(--glow);
 }
-.download-btn .os-icon { font-size: 26px; }
+.download-btn .os-icon { font-size: 32px; }
 .download-btn .os-info { flex: 1; }
-.download-btn .os-name { font-weight: 700; font-size: 14px; }
-.download-btn .os-ext { font-size: 12px; color: var(--muted); }
+.download-btn .os-name { font-weight: 800; font-size: 16px; }
+.download-btn .os-ext { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
 .sysreq {
     background: var(--panel2);
@@ -874,9 +713,6 @@ section { padding: 90px 0; }
     content: '>'; color: var(--accent); font-weight: 800;
 }
 
-/* ============================================================
-   COMPARISON TABLE
-   ============================================================ */
 .comparison {
     overflow-x: auto;
     background: var(--panel);
@@ -885,17 +721,14 @@ section { padding: 90px 0; }
 }
 .comparison table { width: 100%; border-collapse: collapse; min-width: 640px; }
 .comparison th, .comparison td {
-    padding: 18px 22px;
-    text-align: left;
+    padding: 18px 22px; text-align: left;
     border-bottom: 1px solid var(--border);
     font-size: 14px;
 }
 .comparison th {
     background: var(--panel2);
-    font-weight: 800;
-    color: var(--text);
-    font-size: 13px;
-    text-transform: uppercase;
+    font-weight: 800; color: var(--text);
+    font-size: 13px; text-transform: uppercase;
     letter-spacing: .5px;
 }
 .comparison td { color: var(--muted); }
@@ -905,9 +738,6 @@ section { padding: 90px 0; }
 .comparison tbody tr { transition: background .2s; }
 .comparison tbody tr:hover { background: var(--panel2); }
 
-/* ============================================================
-   ROADMAP
-   ============================================================ */
 .roadmap {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -918,11 +748,9 @@ section { padding: 90px 0; }
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 16px;
-    position: relative;
 }
 .roadmap-status {
-    display: inline-block;
-    font-size: 11px; font-weight: 800;
+    display: inline-block; font-size: 11px; font-weight: 800;
     padding: 4px 10px; border-radius: 100px;
     text-transform: uppercase; letter-spacing: 1px;
     margin-bottom: 14px;
@@ -930,28 +758,17 @@ section { padding: 90px 0; }
 .status-done { background: var(--good); color: #000; }
 .status-active { background: var(--accent); color: #000; }
 .status-planned { background: var(--panel3); color: var(--muted); }
-.roadmap-item h3 {
-    font-size: 16px; font-weight: 800;
-    margin-bottom: 8px;
-}
-.roadmap-item p {
-    font-size: 14px; color: var(--muted);
-    line-height: 1.6;
-}
+.roadmap-item h3 { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+.roadmap-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-/* ============================================================
-   DISCORD BANNER
-   ============================================================ */
 .discord-banner {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 32px;
-    align-items: center;
+    gap: 32px; align-items: center;
     padding: 40px;
     background: linear-gradient(135deg, #5865f2 0%, #7289da 100%);
     border-radius: 24px;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
     color: #fff;
 }
 .discord-banner::before {
@@ -964,36 +781,25 @@ section { padding: 90px 0; }
 }
 .discord-icon {
     width: 96px; height: 96px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     background: rgba(255, 255, 255, .15);
-    border-radius: 24px;
-    color: #fff;
+    border-radius: 24px; color: #fff;
     position: relative;
 }
 .discord-content { position: relative; }
 .discord-content .section-label { color: rgba(255, 255, 255, .8); }
 .discord-content h2 {
     font-size: clamp(22px, 3vw, 32px);
-    font-weight: 900;
-    color: #fff;
-    margin: 8px 0 12px;
-    letter-spacing: -.02em;
+    font-weight: 900; color: #fff;
+    margin: 8px 0 12px; letter-spacing: -.02em;
 }
 .discord-content p {
-    font-size: 15px;
-    color: rgba(255, 255, 255, .9);
-    line-height: 1.6;
-    max-width: 520px;
-    margin-bottom: 16px;
+    font-size: 15px; color: rgba(255, 255, 255, .9);
+    line-height: 1.6; max-width: 520px; margin-bottom: 16px;
 }
 .discord-members {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, .9);
+    display: flex; align-items: center; gap: 12px;
+    font-size: 13px; color: rgba(255, 255, 255, .9);
     font-weight: 600;
 }
 .member-avatars { display: flex; }
@@ -1009,21 +815,14 @@ section { padding: 90px 0; }
 .member-avatars span:nth-child(3) { background: linear-gradient(135deg, #56e39b, #43d9ff); }
 .member-avatars span:nth-child(4) { background: linear-gradient(135deg, #b06bff, #ff657a); }
 
-.discord-cta {
-    position: relative;
-    text-align: center;
-}
+.discord-cta { position: relative; text-align: center; }
 .discord-url {
-    margin-top: 12px;
-    font-size: 12px;
+    margin-top: 12px; font-size: 12px;
     color: rgba(255, 255, 255, .75);
     font-family: 'Consolas', monospace;
     letter-spacing: .5px;
 }
 
-/* ============================================================
-   FAQ
-   ============================================================ */
 .faq-list {
     max-width: 820px; margin: 0 auto;
     display: flex; flex-direction: column; gap: 12px;
@@ -1042,30 +841,24 @@ section { padding: 90px 0; }
     cursor: pointer;
     display: flex; justify-content: space-between; align-items: center;
     font-weight: 700; font-size: 15px;
-    user-select: none;
-    gap: 16px;
+    user-select: none; gap: 16px;
 }
 .faq-icon {
     font-size: 22px; color: var(--accent);
-    transition: transform .3s;
-    flex-shrink: 0;
+    transition: transform .3s; flex-shrink: 0;
 }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
 .faq-answer {
     max-height: 0; overflow: hidden;
     transition: max-height .4s ease, padding .4s;
     color: var(--muted); font-size: 14px;
-    padding: 0 26px;
-    line-height: 1.7;
+    padding: 0 26px; line-height: 1.7;
 }
 .faq-item.open .faq-answer {
     max-height: 400px;
     padding: 0 26px 22px;
 }
 
-/* ============================================================
-   NEWSLETTER
-   ============================================================ */
 .newsletter {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -1074,37 +867,23 @@ section { padding: 90px 0; }
     text-align: center;
     max-width: 700px; margin: 0 auto;
 }
-.newsletter h3 {
-    font-size: 24px; font-weight: 800;
-    margin-bottom: 10px;
-}
-.newsletter p {
-    color: var(--muted); font-size: 15px;
-    margin-bottom: 22px;
-}
+.newsletter h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; }
+.newsletter p { color: var(--muted); font-size: 15px; margin-bottom: 22px; }
 .newsletter-form {
     display: flex; gap: 10px;
     max-width: 500px; margin: 0 auto;
 }
 .newsletter-form input {
-    flex: 1;
-    padding: 14px 18px;
+    flex: 1; padding: 14px 18px;
     background: var(--panel2);
     border: 1px solid var(--border);
     border-radius: 10px;
-    color: var(--text);
-    font-size: 14px;
+    color: var(--text); font-size: 14px;
     font-family: inherit;
     transition: border-color .2s;
 }
-.newsletter-form input:focus {
-    outline: none;
-    border-color: var(--accent);
-}
+.newsletter-form input:focus { outline: none; border-color: var(--accent); }
 
-/* ============================================================
-   CTA
-   ============================================================ */
 .cta {
     text-align: center;
     padding: 70px 40px;
@@ -1124,8 +903,7 @@ section { padding: 90px 0; }
 .cta h2 {
     font-size: clamp(28px, 4.5vw, 44px);
     font-weight: 900; margin-bottom: 16px;
-    position: relative;
-    letter-spacing: -.02em;
+    position: relative; letter-spacing: -.02em;
 }
 .cta p {
     color: var(--muted); font-size: 17px;
@@ -1133,9 +911,6 @@ section { padding: 90px 0; }
 }
 .cta .btn { position: relative; }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 footer {
     background: var(--bg-secondary);
     border-top: 1px solid var(--border);
@@ -1145,17 +920,14 @@ footer {
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 40px; margin-bottom: 40px;
 }
 .footer-brand p {
     color: var(--muted); font-size: 14px;
     margin-top: 16px; max-width: 320px;
     line-height: 1.7;
 }
-.footer-social {
-    display: flex; gap: 10px; margin-top: 20px;
-}
+.footer-social { display: flex; gap: 10px; margin-top: 20px; }
 .social-btn {
     width: 38px; height: 38px;
     display: flex; align-items: center; justify-content: center;
@@ -1197,39 +969,22 @@ footer {
 .footer-bottom a { color: var(--muted); }
 .footer-bottom .studio { color: var(--accent); font-weight: 800; }
 
-/* ============================================================
-   BACK TO TOP
-   ============================================================ */
 .back-to-top {
-    position: fixed;
-    bottom: 24px; right: 24px;
+    position: fixed; bottom: 24px; right: 24px;
     width: 46px; height: 46px;
     background: var(--accent);
-    color: #000;
-    border: none;
+    color: #000; border: none;
     border-radius: 12px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 800;
+    cursor: pointer; font-size: 20px; font-weight: 800;
     display: flex; align-items: center; justify-content: center;
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0; pointer-events: none;
     transition: all .3s;
     box-shadow: 0 8px 24px var(--glow);
     z-index: 90;
 }
-.back-to-top.visible {
-    opacity: 1;
-    pointer-events: auto;
-}
-.back-to-top:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px var(--glow);
-}
+.back-to-top.visible { opacity: 1; pointer-events: auto; }
+.back-to-top:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--glow); }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 @media (max-width: 900px) {
     .nav-links {
         display: none;
@@ -1237,8 +992,7 @@ footer {
         top: 70px; left: 0; right: 0;
         background: var(--panel);
         flex-direction: column;
-        padding: 24px;
-        gap: 20px;
+        padding: 24px; gap: 20px;
         border-bottom: 1px solid var(--border);
         box-shadow: 0 20px 40px var(--shadow);
     }
@@ -1256,14 +1010,10 @@ footer {
     .gpu-specs { grid-template-columns: 1fr; }
     .discord-banner {
         grid-template-columns: 1fr;
-        text-align: center;
-        gap: 24px;
+        text-align: center; gap: 24px;
         padding: 32px 24px;
     }
-    .discord-icon {
-        width: 72px; height: 72px;
-        margin: 0 auto;
-    }
+    .discord-icon { width: 72px; height: 72px; margin: 0 auto; }
     .discord-content p { margin: 0 auto 16px; }
     .discord-members { justify-content: center; }
 }
@@ -1283,39 +1033,24 @@ footer {
     .icon-btn { width: 32px; height: 32px; font-size: 14px; }
 }
 
-/* ============================================================
-   SCROLLBAR
-   ============================================================ */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb {
-    background: var(--panel3); border-radius: 5px;
-}
+::-webkit-scrollbar-thumb { background: var(--panel3); border-radius: 5px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
-/* ============================================================
-   SCROLL ANIMATIONS
-   ============================================================ */
 .fade-in {
     opacity: 0; transform: translateY(24px);
     transition: opacity .7s, transform .7s;
 }
-.fade-in.visible {
-    opacity: 1; transform: translateY(0);
-}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
 
-<!-- Gradient arka plan -->
 <div class="gradient-bg"></div>
-
-<!-- Scroll progress -->
 <div class="progress-bar" id="progressBar"></div>
 
-<!-- ============================================================
-     NAVBAR
-     ============================================================ -->
+<!-- NAVBAR -->
 <nav class="navbar">
     <div class="container navbar-inner">
         <a href="#" class="logo">
@@ -1353,9 +1088,7 @@ footer {
     </div>
 </nav>
 
-<!-- ============================================================
-     HERO
-     ============================================================ -->
+<!-- HERO -->
 <section class="hero">
     <div class="container hero-content">
         <div class="badge">
@@ -1371,7 +1104,7 @@ footer {
             GameForge; guc plani, GPU kontrol, FPS olcumu, oyun profili ve dahasini tek yerde toplar. Gercek tweak'ler, gercek olcum, gercek geri alma.
         </p>
         <div class="hero-buttons">
-            <a href="#download" class="btn btn-primary btn-large">
+            <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/download/V8.0.0/GameForge.exe" target="_blank" class="btn btn-primary btn-large">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                     <polyline points="7 10 12 15 17 10"/>
@@ -1403,102 +1136,90 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     FEATURES
-     ============================================================ -->
+<!-- FEATURES -->
 <section id="features">
     <div class="container">
         <div class="section-header fade-in">
             <div class="section-label" data-tr="Ozellikler" data-en="Features">Ozellikler</div>
             <h2 data-tr="Her sey tek programda" data-en="Everything in one app">Her sey tek programda</h2>
-            <p data-tr="Oyun bilgisayarinizi optimize etmek icin ihtiyaciniz olan tum araclar. Hepsi gercek, hepsi geri alinabilir."
-               data-en="All the tools you need to optimize your gaming PC. All real, all reversible.">
-                Oyun bilgisayarinizi optimize etmek icin ihtiyaciniz olan tum araclar. Hepsi gercek, hepsi geri alinabilir.
+            <p data-tr="Oyun bilgisayarinizi optimize etmek icin ihtiyaciniz olan tum araclar."
+               data-en="All the tools you need to optimize your gaming PC.">
+                Oyun bilgisayarinizi optimize etmek icin ihtiyaciniz olan tum araclar.
             </p>
         </div>
-
         <div class="features-grid">
             <div class="feature fade-in">
                 <div class="feature-icon">&#9881;&#65039;</div>
                 <h3 data-tr="Akilli Optimizasyon" data-en="Smart Optimization">Akilli Optimizasyon</h3>
                 <p data-tr="Guvenli, Dengeli ve Agresif modlar. Sisteminizi tarar, sadece gerekli tweak'leri onerir."
-                   data-en="Safe, Balanced and Aggressive modes. Scans your system and recommends only necessary tweaks.">
+                   data-en="Safe, Balanced and Aggressive modes. Recommends only necessary tweaks.">
                     Guvenli, Dengeli ve Agresif modlar. Sisteminizi tarar, sadece gerekli tweak'leri onerir.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#127918;</div>
                 <h3 data-tr="Oyun Profilleri" data-en="Game Profiles">Oyun Profilleri</h3>
                 <p data-tr="Her oyun icin ayri profil. FPS hedefi, grafik onerisi, CPU/GPU tweak listesi."
-                   data-en="Separate profile for each game. Target FPS, graphics preset, CPU/GPU tweak list.">
+                   data-en="Separate profile for each game. Target FPS, graphics preset, CPU/GPU tweaks.">
                     Her oyun icin ayri profil. FPS hedefi, grafik onerisi, CPU/GPU tweak listesi.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#128200;</div>
                 <h3 data-tr="Gercek FPS Olcumu" data-en="Real FPS Measurement">Gercek FPS Olcumu</h3>
-                <p data-tr="PresentMon ile ortalama, min, 1% low, 0.1% low, frametime. Uydurma degil, gercek."
-                   data-en="With PresentMon: average, min, 1% low, 0.1% low, frametime. Not fake, real.">
-                    PresentMon ile ortalama, min, 1% low, 0.1% low, frametime. Uydurma degil, gercek.
+                <p data-tr="PresentMon ile ortalama, min, 1% low, 0.1% low, frametime."
+                   data-en="With PresentMon: average, min, 1% low, 0.1% low, frametime.">
+                    PresentMon ile ortalama, min, 1% low, 0.1% low, frametime.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#9878;&#65039;</div>
                 <h3 data-tr="Once/Sonra Karsilastirma" data-en="Before/After Comparison">Once/Sonra Karsilastirma</h3>
                 <p data-tr="Tweak uygula, etkisini olc. CPU ve RAM farki yuzde olarak gorunur."
-                   data-en="Apply tweak, measure impact. See CPU and RAM difference in percentage.">
+                   data-en="Apply tweak, measure impact. See CPU and RAM difference.">
                     Tweak uygula, etkisini olc. CPU ve RAM farki yuzde olarak gorunur.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#128295;</div>
                 <h3 data-tr="GPU Kontrol" data-en="GPU Control">GPU Kontrol</h3>
-                <p data-tr="Fan hizi, power limit, clock offset. NVIDIA icin tam destek. AMD/Intel icin okuma."
-                   data-en="Fan speed, power limit, clock offset. Full support for NVIDIA, reading for AMD/Intel.">
-                    Fan hizi, power limit, clock offset. NVIDIA icin tam destek. AMD/Intel icin okuma.
+                <p data-tr="Fan hizi, power limit, clock offset. NVIDIA icin tam destek."
+                   data-en="Fan speed, power limit, clock offset. Full support for NVIDIA.">
+                    Fan hizi, power limit, clock offset. NVIDIA icin tam destek.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#127917;</div>
                 <h3 data-tr="Forge Modu" data-en="Forge Mode">Forge Modu</h3>
                 <p data-tr="Tek tusla tum optimizasyon. Arka plan, guc plani, overlay ve oyun profili birden."
-                   data-en="One click, all optimization. Background, power plan, overlay and game profile together.">
+                   data-en="One click, all optimization. Background, power plan, overlay together.">
                     Tek tusla tum optimizasyon. Arka plan, guc plani, overlay ve oyun profili birden.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#129302;</div>
                 <h3 data-tr="AI Danisman" data-en="AI Advisor">AI Danisman</h3>
-                <p data-tr="Canli bottleneck analizi. CPU mu, GPU mu, RAM mi sinirliyor? Hemen soyler."
-                   data-en="Live bottleneck analysis. CPU, GPU or RAM limited? It tells you instantly.">
-                    Canli bottleneck analizi. CPU mu, GPU mu, RAM mi sinirliyor? Hemen soyler.
+                <p data-tr="Canli bottleneck analizi. CPU mu, GPU mu, RAM mi sinirliyor?"
+                   data-en="Live bottleneck analysis. CPU, GPU or RAM limited?">
+                    Canli bottleneck analizi. CPU mu, GPU mu, RAM mi sinirliyor?
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#128737;&#65039;</div>
                 <h3 data-tr="Guvenli Rollback" data-en="Safe Rollback">Guvenli Rollback</h3>
-                <p data-tr="Her tweak oncesi snapshot. Acil durum butonu ile sistem eski haline saniyeler icinde."
-                   data-en="Snapshot before every tweak. Emergency button restores system in seconds.">
-                    Her tweak oncesi snapshot. Acil durum butonu ile sistem eski haline saniyeler icinde.
+                <p data-tr="Her tweak oncesi snapshot. Acil durum butonu ile sistem eski haline."
+                   data-en="Snapshot before every tweak. Emergency button restores system.">
+                    Her tweak oncesi snapshot. Acil durum butonu ile sistem eski haline.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#128736;&#65039;</div>
                 <h3 data-tr="Onarim Merkezi" data-en="Repair Center">Onarim Merkezi</h3>
-                <p data-tr="SFC, DISM, DirectX, VC++ kontrolleri. Sorunlu bilesenleri tek tikla kontrol et."
-                   data-en="SFC, DISM, DirectX, VC++ checks. Check problematic components with one click.">
-                    SFC, DISM, DirectX, VC++ kontrolleri. Sorunlu bilesenleri tek tikla kontrol et.
+                <p data-tr="SFC, DISM, DirectX, VC++ kontrolleri. Sorunlu bilesenleri kontrol et."
+                   data-en="SFC, DISM, DirectX, VC++ checks. Check problematic components.">
+                    SFC, DISM, DirectX, VC++ kontrolleri. Sorunlu bilesenleri kontrol et.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#127912;</div>
                 <h3 data-tr="20 Tema" data-en="20 Themes">20 Tema</h3>
@@ -1507,21 +1228,19 @@ footer {
                     Dark blue, neon, matrix, dracula, nord, cyberpunk ve daha fazlasi.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#128225;</div>
                 <h3 data-tr="Ag Testi" data-en="Network Test">Ag Testi</h3>
-                <p data-tr="Ping, jitter, packet loss, DNS gecikmesi. Rekabetci oyuncular icin sart."
-                   data-en="Ping, jitter, packet loss, DNS latency. Essential for competitive players.">
-                    Ping, jitter, packet loss, DNS gecikmesi. Rekabetci oyuncular icin sart.
+                <p data-tr="Ping, jitter, packet loss, DNS gecikmesi. Rekabetci oyuncular icin."
+                   data-en="Ping, jitter, packet loss, DNS latency. For competitive players.">
+                    Ping, jitter, packet loss, DNS gecikmesi. Rekabetci oyuncular icin.
                 </p>
             </div>
-
             <div class="feature fade-in">
                 <div class="feature-icon">&#9889;</div>
                 <h3 data-tr="Timer Resolution" data-en="Timer Resolution">Timer Resolution</h3>
                 <p data-tr="NtSetTimerResolution ile 0.5ms. Rekabetci oyunlarda input latency dusurur."
-                   data-en="0.5ms with NtSetTimerResolution. Reduces input latency in competitive games.">
+                   data-en="0.5ms with NtSetTimerResolution. Reduces input latency.">
                     NtSetTimerResolution ile 0.5ms. Rekabetci oyunlarda input latency dusurur.
                 </p>
             </div>
@@ -1529,20 +1248,17 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     SCREENSHOTS
-     ============================================================ -->
+<!-- SCREENSHOTS -->
 <section id="screenshots">
     <div class="container">
         <div class="section-header fade-in">
             <div class="section-label" data-tr="Ekran Goruntuleri" data-en="Screenshots">Ekran Goruntuleri</div>
             <h2 data-tr="Modern ve kullanisli" data-en="Modern and usable">Modern ve kullanisli</h2>
-            <p data-tr="32 sekme, sidebar navigasyon, 20 tema. Karmasik ayarlar arkasinda basit arayuz."
-               data-en="32 tabs, sidebar navigation, 20 themes. Simple UI behind complex settings.">
-                32 sekme, sidebar navigasyon, 20 tema. Karmasik ayarlar arkasinda basit arayuz.
+            <p data-tr="32 sekme, sidebar navigasyon, 20 tema."
+               data-en="32 tabs, sidebar navigation, 20 themes.">
+                32 sekme, sidebar navigasyon, 20 tema.
             </p>
         </div>
-
         <div class="screenshots">
             <div class="screenshot fade-in" onclick="openLightbox('Dashboard')">
                 <div class="screenshot-placeholder">Dashboard</div>
@@ -1572,9 +1288,7 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     FORGE MODU
-     ============================================================ -->
+<!-- FORGE MODU -->
 <section id="forge-mode">
     <div class="container">
         <div class="showcase">
@@ -1606,9 +1320,7 @@ footer {
             <div class="showcase-visual fade-in">
                 <div class="visual-box">
                     <div class="visual-header">
-                        <div class="visual-dots">
-                            <span></span><span></span><span></span>
-                        </div>
+                        <div class="visual-dots"><span></span><span></span><span></span></div>
                         <div class="visual-title">FORGE MODU</div>
                     </div>
                     <div class="visual-body">
@@ -1627,9 +1339,7 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     GPU KONTROL
-     ============================================================ -->
+<!-- GPU KONTROL -->
 <section id="gpu-control">
     <div class="container">
         <div class="showcase reverse">
@@ -1676,47 +1386,33 @@ footer {
             <div class="showcase-visual fade-in">
                 <div class="visual-box">
                     <div class="visual-header">
-                        <div class="visual-dots">
-                            <span></span><span></span><span></span>
-                        </div>
+                        <div class="visual-dots"><span></span><span></span><span></span></div>
                         <div class="visual-title">GPU KONTROL</div>
                     </div>
                     <div class="visual-body gpu-panel">
                         <div class="slider-group">
                             <div class="slider-label">
-                                <span>Fan</span>
-                                <span class="slider-value">65%</span>
+                                <span>Fan</span><span class="slider-value">65%</span>
                             </div>
-                            <div class="slider-track">
-                                <div class="slider-fill" style="width: 65%"></div>
-                            </div>
+                            <div class="slider-track"><div class="slider-fill" style="width: 65%"></div></div>
                         </div>
                         <div class="slider-group">
                             <div class="slider-label">
-                                <span>Power</span>
-                                <span class="slider-value">180W</span>
+                                <span>Power</span><span class="slider-value">180W</span>
                             </div>
-                            <div class="slider-track">
-                                <div class="slider-fill" style="width: 72%"></div>
-                            </div>
+                            <div class="slider-track"><div class="slider-fill" style="width: 72%"></div></div>
                         </div>
                         <div class="slider-group">
                             <div class="slider-label">
-                                <span>Clock</span>
-                                <span class="slider-value">+100 MHz</span>
+                                <span>Clock</span><span class="slider-value">+100 MHz</span>
                             </div>
-                            <div class="slider-track">
-                                <div class="slider-fill" style="width: 60%"></div>
-                            </div>
+                            <div class="slider-track"><div class="slider-fill" style="width: 60%"></div></div>
                         </div>
                         <div class="slider-group">
                             <div class="slider-label">
-                                <span>Mem</span>
-                                <span class="slider-value">+500 MHz</span>
+                                <span>Mem</span><span class="slider-value">+500 MHz</span>
                             </div>
-                            <div class="slider-track">
-                                <div class="slider-fill" style="width: 55%"></div>
-                            </div>
+                            <div class="slider-track"><div class="slider-fill" style="width: 55%"></div></div>
                         </div>
                     </div>
                 </div>
@@ -1725,9 +1421,7 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     MODLAR
-     ============================================================ -->
+<!-- MODLAR -->
 <section id="modes">
     <div class="container">
         <div class="section-header fade-in">
@@ -1735,15 +1429,11 @@ footer {
             <h2>3 farkli optimizasyon seviyesi</h2>
             <p>Risk ve etki seviyesine gore istediginizi secin.</p>
         </div>
-
         <div class="modes-grid">
             <div class="mode-card fade-in">
                 <div class="mode-badge mode-safe">GUVENLI</div>
                 <h3>Guvenli Mod</h3>
-                <p class="mode-desc">
-                    Dusuk risk, tamamen geri alinabilir. Acemi
-                    kullanicilar icin ideal.
-                </p>
+                <p class="mode-desc">Dusuk risk, tamamen geri alinabilir. Acemi kullanicilar icin ideal.</p>
                 <ul class="mode-list">
                     <li>Guc plani</li>
                     <li>Windows Game Mode</li>
@@ -1755,14 +1445,10 @@ footer {
                     <span class="risk-low">Dusuk</span>
                 </div>
             </div>
-
             <div class="mode-card fade-in highlighted">
                 <div class="mode-badge mode-balanced">DENGELI</div>
                 <h3>Dengeli Mod</h3>
-                <p class="mode-desc">
-                    Guvenli modun tum ozellikleri + ag ve servis
-                    yonetimi. Gunluk kullanim icin ideal.
-                </p>
+                <p class="mode-desc">Guvenli modun tum ozellikleri + ag ve servis yonetimi.</p>
                 <ul class="mode-list">
                     <li>Guvenli mod ozellikleri</li>
                     <li>TCP ag optimizasyonu</li>
@@ -1776,14 +1462,10 @@ footer {
                     <span class="risk-medium">Orta</span>
                 </div>
             </div>
-
             <div class="mode-card fade-in">
                 <div class="mode-badge mode-aggressive">AGRESIF</div>
                 <h3>Agresif Mod</h3>
-                <p class="mode-desc">
-                    Registry ve riskli ayarlar. Ileri seviye
-                    kullanicilar icin.
-                </p>
+                <p class="mode-desc">Registry ve riskli ayarlar. Ileri seviye kullanicilar icin.</p>
                 <ul class="mode-list">
                     <li>Dengeli mod ozellikleri</li>
                     <li>Registry tweak'leri (HAGS, GameDVR)</li>
@@ -1800,80 +1482,40 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     BENCHMARK
-     ============================================================ -->
+<!-- BENCHMARK -->
 <section id="benchmark">
     <div class="container">
         <div class="showcase">
             <div class="showcase-content fade-in">
                 <div class="section-label">Benchmark</div>
                 <h2>Once / Sonra karsilastirma</h2>
-                <p>
-                    Sadece "optimize ettim" demek yerine, etkisini
-                    olcun. Before/After karsilastirma ile gercek
-                    farki gorun.
-                </p>
-                <p class="highlight">
-                    1) ONCE TEST → 2) OPTIMIZE ET → 3) SONRA TEST
-                </p>
+                <p>Sadece "optimize ettim" demek yerine, etkisini olcun.</p>
+                <p class="highlight">1) ONCE TEST → 2) OPTIMIZE ET → 3) SONRA TEST</p>
                 <ul class="showcase-list">
                     <li>PresentMon ile gercek FPS olcumu</li>
                     <li>Ortalama, min, 1% low, 0.1% low</li>
                     <li>Frametime analizi</li>
                     <li>CPU ve RAM yuzde farki</li>
-                    <li>Gecmis karsilastirma (son 20 test)</li>
+                    <li>Gecmis karsilastirma</li>
                 </ul>
             </div>
             <div class="showcase-visual fade-in">
                 <div class="visual-box">
                     <div class="visual-header">
-                        <div class="visual-dots">
-                            <span></span><span></span><span></span>
-                        </div>
+                        <div class="visual-dots"><span></span><span></span><span></span></div>
                         <div class="visual-title">BENCHMARK</div>
                     </div>
                     <div class="visual-body bench-panel">
                         <table class="bench-table">
                             <thead>
-                                <tr>
-                                    <th>Metrik</th>
-                                    <th>Once</th>
-                                    <th>Sonra</th>
-                                    <th>Fark</th>
-                                </tr>
+                                <tr><th>Metrik</th><th>Once</th><th>Sonra</th><th>Fark</th></tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Ort. FPS</td>
-                                    <td>62</td>
-                                    <td class="good">67</td>
-                                    <td class="good">+5.0</td>
-                                </tr>
-                                <tr>
-                                    <td>1% Low</td>
-                                    <td>42</td>
-                                    <td class="good">48</td>
-                                    <td class="good">+6.0</td>
-                                </tr>
-                                <tr>
-                                    <td>CPU %</td>
-                                    <td>85</td>
-                                    <td class="good">78</td>
-                                    <td class="good">-7.0</td>
-                                </tr>
-                                <tr>
-                                    <td>RAM %</td>
-                                    <td>72</td>
-                                    <td class="good">61</td>
-                                    <td class="good">-11.0</td>
-                                </tr>
-                                <tr>
-                                    <td>GPU C</td>
-                                    <td>75</td>
-                                    <td class="good">73</td>
-                                    <td class="good">-2.0</td>
-                                </tr>
+                                <tr><td>Ort. FPS</td><td>62</td><td class="good">67</td><td class="good">+5.0</td></tr>
+                                <tr><td>1% Low</td><td>42</td><td class="good">48</td><td class="good">+6.0</td></tr>
+                                <tr><td>CPU %</td><td>85</td><td class="good">78</td><td class="good">-7.0</td></tr>
+                                <tr><td>RAM %</td><td>72</td><td class="good">61</td><td class="good">-11.0</td></tr>
+                                <tr><td>GPU C</td><td>75</td><td class="good">73</td><td class="good">-2.0</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -1883,21 +1525,15 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     AI DANISMAN
-     ============================================================ -->
+<!-- AI DANISMAN -->
 <section id="advisor">
     <div class="container">
         <div class="showcase reverse">
             <div class="showcase-content fade-in">
                 <div class="section-label">AI Danisman</div>
                 <h2>Ne sinirliyor? Hemen soyler</h2>
-                <p>
-                    Canli bottleneck analizi ile sisteminizde hangi
-                    bilesenin sinir yarattigini tespit eder.
-                    CPU mu, GPU mu, RAM mi, VRAM mi?
-                </p>
-                <div class="advisor-types">
+                <p>Canli bottleneck analizi ile sisteminizde hangi bilesenin sinir yarattigini tespit eder.</p>
+                <div class="gpu-specs">
                     <div class="spec-item">
                         <div class="spec-icon">&#129504;</div>
                         <div class="spec-info">
@@ -1931,36 +1567,27 @@ footer {
             <div class="showcase-visual fade-in">
                 <div class="visual-box">
                     <div class="visual-header">
-                        <div class="visual-dots">
-                            <span></span><span></span><span></span>
-                        </div>
+                        <div class="visual-dots"><span></span><span></span><span></span></div>
                         <div class="visual-title">AI DANISMAN</div>
                     </div>
                     <div class="visual-body advisor-panel">
                         <div class="advisor-line">
                             <span class="advisor-key">CPU:</span>
                             <span class="advisor-val">%45</span>
-                            <span class="advisor-bar-mini">
-                                <span style="width: 45%"></span>
-                            </span>
+                            <span class="advisor-bar-mini"><span style="width: 45%"></span></span>
                         </div>
                         <div class="advisor-line">
                             <span class="advisor-key">GPU:</span>
                             <span class="advisor-val">%92</span>
-                            <span class="advisor-bar-mini">
-                                <span style="width: 92%; background: #ffc85c"></span>
-                            </span>
+                            <span class="advisor-bar-mini"><span style="width: 92%; background: #ffc85c"></span></span>
                         </div>
                         <div class="advisor-line">
                             <span class="advisor-key">RAM:</span>
                             <span class="advisor-val">%68</span>
-                            <span class="advisor-bar-mini">
-                                <span style="width: 68%"></span>
-                            </span>
+                            <span class="advisor-bar-mini"><span style="width: 68%"></span></span>
                         </div>
                         <div class="advisor-verdict">
-                            <strong>SONUC:</strong> GPU bottleneck (normal)
-                            <br>
+                            <strong>SONUC:</strong> GPU bottleneck (normal)<br>
                             <strong>ONERI:</strong> DLSS/FSR ac, grafik ayarini dus
                         </div>
                     </div>
@@ -1970,9 +1597,7 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     DOWNLOAD
-     ============================================================ -->
+<!-- DOWNLOAD -->
 <section id="download">
     <div class="container">
         <div class="section-header fade-in">
@@ -1994,25 +1619,11 @@ footer {
             </div>
 
             <div class="download-buttons">
-                <a href="#" class="download-btn" data-download="setup">
+                <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/download/V8.0.0/GameForge.exe" target="_blank" class="download-btn">
                     <span class="os-icon">&#129302;</span>
                     <div class="os-info">
-                        <div class="os-name" data-tr="Windows Installer" data-en="Windows Installer">Windows Installer</div>
-                        <div class="os-ext">.exe - 15 MB</div>
-                    </div>
-                </a>
-                <a href="#" class="download-btn" data-download="portable">
-                    <span class="os-icon">&#128230;</span>
-                    <div class="os-info">
-                        <div class="os-name" data-tr="Portable (Kurulumsuz)" data-en="Portable (No install)">Portable (Kurulumsuz)</div>
-                        <div class="os-ext">.zip - 18 MB</div>
-                    </div>
-                </a>
-                <a href="#" class="download-btn" data-download="source">
-                    <span class="os-icon">&#128196;</span>
-                    <div class="os-info">
-                        <div class="os-name" data-tr="Kaynak Kod" data-en="Source Code">Kaynak Kod</div>
-                        <div class="os-ext">.zip - 5 MB</div>
+                        <div class="os-name" data-tr="Windows icin Indir" data-en="Download for Windows">Windows icin Indir</div>
+                        <div class="os-ext">.exe - Kurulum gerekmez, cift tikla calistir</div>
                     </div>
                 </a>
             </div>
@@ -2021,18 +1632,16 @@ footer {
                 <h4 data-tr="Sistem Gereksinimleri" data-en="System Requirements">Sistem Gereksinimleri</h4>
                 <ul>
                     <li data-tr="Windows 10 / 11" data-en="Windows 10 / 11">Windows 10 / 11</li>
-                    <li data-tr="Python 3.10+ (kaynak icin)" data-en="Python 3.10+ (for source)">Python 3.10+ (kaynak icin)</li>
                     <li data-tr="4 GB RAM" data-en="4 GB RAM">4 GB RAM</li>
                     <li data-tr="100 MB disk" data-en="100 MB disk">100 MB disk</li>
+                    <li data-tr="Yonetici yetkisi (tweak'ler icin)" data-en="Admin rights (for tweaks)">Yonetici yetkisi (tweak'ler icin)</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============================================================
-     COMPARISON
-     ============================================================ -->
+<!-- COMPARISON -->
 <section id="comparison">
     <div class="container">
         <div class="section-header fade-in">
@@ -2040,7 +1649,6 @@ footer {
             <h2 data-tr="Rakiplerden farkli" data-en="Different from competitors">Rakiplerden farkli</h2>
             <p data-tr="Neden GameForge'u secmelisin?" data-en="Why choose GameForge?">Neden GameForge'u secmelisin?</p>
         </div>
-
         <div class="comparison fade-in">
             <table>
                 <thead>
@@ -2055,59 +1663,35 @@ footer {
                 <tbody>
                     <tr>
                         <td data-tr="Oyun optimizasyon" data-en="Game optimization">Oyun optimizasyon</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="no">&#10007;</td>
+                        <td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="no">&#10007;</td>
                     </tr>
                     <tr>
                         <td data-tr="GPU kontrol" data-en="GPU control">GPU kontrol</td>
-                        <td class="yes">NVIDIA</td>
-                        <td class="no">&#10007;</td>
-                        <td class="no">&#10007;</td>
-                        <td class="yes">&#10003;</td>
+                        <td class="yes">NVIDIA</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="yes">&#10003;</td>
                     </tr>
                     <tr>
                         <td data-tr="FPS olcumu" data-en="FPS measurement">FPS olcumu</td>
-                        <td class="yes">Gercek</td>
-                        <td class="no">Basit</td>
-                        <td class="no">&#10007;</td>
-                        <td class="yes">RTSS</td>
+                        <td class="yes">Gercek</td><td class="no">Basit</td><td class="no">&#10007;</td><td class="yes">RTSS</td>
                     </tr>
                     <tr>
                         <td data-tr="Rollback" data-en="Rollback">Rollback</td>
-                        <td class="yes">Tam</td>
-                        <td class="no">Sinirli</td>
-                        <td class="no">&#10007;</td>
-                        <td class="no">&#10007;</td>
+                        <td class="yes">Tam</td><td class="no">Sinirli</td><td class="no">&#10007;</td><td class="no">&#10007;</td>
                     </tr>
                     <tr>
                         <td data-tr="Oyun profili" data-en="Game profiles">Oyun profili</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="no">&#10007;</td>
-                        <td class="no">&#10007;</td>
-                        <td class="no">&#10007;</td>
+                        <td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td>
                     </tr>
                     <tr>
                         <td data-tr="AI danisman" data-en="AI advisor">AI danisman</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="no">&#10007;</td>
-                        <td class="no">&#10007;</td>
-                        <td class="no">&#10007;</td>
+                        <td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td>
                     </tr>
                     <tr>
                         <td data-tr="Ucretsiz" data-en="Free">Ucretsiz</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="yes">&#10003;</td>
+                        <td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td>
                     </tr>
                     <tr>
                         <td data-tr="Acik kaynak" data-en="Open source">Acik kaynak</td>
-                        <td class="yes">&#10003;</td>
-                        <td class="no">&#10007;</td>
-                        <td class="no">&#10007;</td>
-                        <td class="no">&#10007;</td>
+                        <td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td>
                     </tr>
                 </tbody>
             </table>
@@ -2115,52 +1699,35 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     ROADMAP
-     ============================================================ -->
+<!-- ROADMAP -->
 <section id="roadmap">
     <div class="container">
         <div class="section-header fade-in">
             <div class="section-label" data-tr="Yol Haritasi" data-en="Roadmap">Yol Haritasi</div>
             <h2 data-tr="Gelecek planlari" data-en="Future plans">Gelecek planlari</h2>
-            <p data-tr="Surerli gelisen bir proje. Iste yol haritamiz."
-               data-en="A continuously evolving project. Here's our roadmap.">
-                Surerli gelisen bir proje. Iste yol haritamiz.
-            </p>
+            <p data-tr="Surerli gelisen bir proje." data-en="A continuously evolving project.">Surerli gelisen bir proje.</p>
         </div>
-
         <div class="roadmap">
             <div class="roadmap-item fade-in">
                 <span class="roadmap-status status-done" data-tr="Tamamlandi" data-en="Completed">Tamamlandi</span>
                 <h3>V8.0.0</h3>
-                <p data-tr="32 sekme, 20 tema, 15 tweak, GPU kontrol, AI danisman, oyun profilleri."
-                   data-en="32 tabs, 20 themes, 15 tweaks, GPU control, AI advisor, game profiles.">
-                    32 sekme, 20 tema, 15 tweak, GPU kontrol, AI danisman, oyun profilleri.
-                </p>
+                <p>32 sekme, 20 tema, 15 tweak, GPU kontrol, AI danisman, oyun profilleri.</p>
             </div>
             <div class="roadmap-item fade-in">
                 <span class="roadmap-status status-active" data-tr="Gelistiriliyor" data-en="In Development">Gelistiriliyor</span>
                 <h3>V8.1 / V8.2</h3>
-                <p data-tr="AMD/Intel GPU yazma destegi, Steam Web API entegrasyonu, otomatik oyun algilama, gelismis AI."
-                   data-en="AMD/Intel GPU write support, Steam Web API integration, auto game detection, enhanced AI.">
-                    AMD/Intel GPU yazma destegi, Steam Web API entegrasyonu, otomatik oyun algilama, gelismis AI.
-                </p>
+                <p>AMD/Intel GPU yazma destegi, Steam Web API, otomatik oyun algilama, gelismis AI.</p>
             </div>
             <div class="roadmap-item fade-in">
                 <span class="roadmap-status status-planned" data-tr="Planlandi" data-en="Planned">Planlandi</span>
                 <h3>V9.0.0</h3>
-                <p data-tr="RTSS tarzi enjeksiyon overlay, kendi ETW FPS hook, plugin market, topluluk tweak paylasimi."
-                   data-en="RTSS-style injection overlay, own ETW FPS hook, plugin market, community tweak sharing.">
-                    RTSS tarzi enjeksiyon overlay, kendi ETW FPS hook, plugin market, topluluk tweak paylasimi.
-                </p>
+                <p>RTSS tarzi enjeksiyon overlay, kendi ETW FPS hook, plugin market.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============================================================
-     DISCORD BANNER
-     ============================================================ -->
+<!-- DISCORD -->
 <section id="discord">
     <div class="container">
         <div class="discord-banner fade-in">
@@ -2171,17 +1738,13 @@ footer {
             </div>
             <div class="discord-content">
                 <div class="section-label" data-tr="Topluluk" data-en="Community">Topluluk</div>
-                <h2 data-tr="Discord sunucumuza katil" data-en="Join our Discord server">
-                    Discord sunucumuza katil
-                </h2>
+                <h2 data-tr="Discord sunucumuza katil" data-en="Join our Discord server">Discord sunucumuza katil</h2>
                 <p data-tr="Yeni surumler, tweak paylasimi, sorun cozumu ve topluluk destegi icin Discord sunucumuza bekliyoruz."
-                   data-en="For new releases, tweak sharing, troubleshooting and community support, join our Discord server.">
+                   data-en="For new releases, tweak sharing, troubleshooting and community support, join our Discord.">
                     Yeni surumler, tweak paylasimi, sorun cozumu ve topluluk destegi icin Discord sunucumuza bekliyoruz.
                 </p>
                 <div class="discord-members">
-                    <div class="member-avatars">
-                        <span></span><span></span><span></span><span></span>
-                    </div>
+                    <div class="member-avatars"><span></span><span></span><span></span><span></span></div>
                     <span data-tr="+100 uye aktif" data-en="+100 members active">+100 uye aktif</span>
                 </div>
             </div>
@@ -2198,9 +1761,7 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     FAQ
-     ============================================================ -->
+<!-- FAQ -->
 <section id="faq">
     <div class="container">
         <div class="section-header fade-in">
@@ -2208,7 +1769,6 @@ footer {
             <h2 data-tr="Sikca sorulan sorular" data-en="Frequently asked questions">Sikca sorulan sorular</h2>
             <p data-tr="Merak edilenlerin cevaplari." data-en="Answers to common questions.">Merak edilenlerin cevaplari.</p>
         </div>
-
         <div class="faq-list">
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
@@ -2222,7 +1782,6 @@ footer {
                     </span>
                 </div>
             </div>
-
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
                     <span data-tr="Sistemimi bozar mi?" data-en="Will it break my system?">Sistemimi bozar mi?</span>
@@ -2235,33 +1794,30 @@ footer {
                     </span>
                 </div>
             </div>
-
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
                     <span data-tr="Hangi Windows surumleri desteklenir?" data-en="Which Windows versions are supported?">Hangi Windows surumleri desteklenir?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <span data-tr="Windows 10 ve Windows 11. Python 3.10+ gerekli (kaynak koddan calistirmak icin). Windows 7/8 desteklenmiyor."
-                          data-en="Windows 10 and 11. Python 3.10+ required (to run from source). Windows 7/8 not supported.">
-                        Windows 10 ve Windows 11. Python 3.10+ gerekli (kaynak koddan calistirmak icin). Windows 7/8 desteklenmiyor.
+                    <span data-tr="Windows 10 ve Windows 11. Windows 7/8 desteklenmiyor."
+                          data-en="Windows 10 and 11. Windows 7/8 not supported.">
+                        Windows 10 ve Windows 11. Windows 7/8 desteklenmiyor.
                     </span>
                 </div>
             </div>
-
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
                     <span data-tr="FPS artisi ne kadar?" data-en="How much FPS gain?">FPS artisi ne kadar?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <span data-tr="Durust cevap: tweak'ler ortalama %2-8 FPS etkisi yapar. Asil fark DLSS, undervolt ve grafik ayarlarindan gelir. GameForge bunlari kolaylastirir, sihirli sekilde hizlandirmaz."
-                          data-en="Honest answer: tweaks have an average of 2-8% FPS impact. The real difference comes from DLSS, undervolt and graphics settings. GameForge makes these easier, doesn't magically speed things up.">
-                        Durust cevap: tweak'ler ortalama %2-8 FPS etkisi yapar. Asil fark DLSS, undervolt ve grafik ayarlarindan gelir. GameForge bunlari kolaylastirir, sihirli sekilde hizlandirmaz.
+                    <span data-tr="Durust cevap: tweak'ler ortalama %2-8 FPS etkisi yapar. Asil fark DLSS, undervolt ve grafik ayarlarindan gelir."
+                          data-en="Honest answer: tweaks have an average of 2-8% FPS impact. The real difference comes from DLSS, undervolt and graphics settings.">
+                        Durust cevap: tweak'ler ortalama %2-8 FPS etkisi yapar. Asil fark DLSS, undervolt ve grafik ayarlarindan gelir.
                     </span>
                 </div>
             </div>
-
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
                     <span data-tr="Verilerimi topluyor mu?" data-en="Does it collect my data?">Verilerimi topluyor mu?</span>
@@ -2274,7 +1830,6 @@ footer {
                     </span>
                 </div>
             </div>
-
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
                     <span data-tr="Steam disi oyunlari destekliyor mu?" data-en="Does it support non-Steam games?">Steam disi oyunlari destekliyor mu?</span>
@@ -2287,7 +1842,6 @@ footer {
                     </span>
                 </div>
             </div>
-
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
                     <span data-tr="Antivirus uyarisi verir mi?" data-en="Will antivirus warn?">Antivirus uyarisi verir mi?</span>
@@ -2300,20 +1854,18 @@ footer {
                     </span>
                 </div>
             </div>
-
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
                     <span data-tr="Nasil kaldirilir?" data-en="How to uninstall?">Nasil kaldirilir?</span>
                     <span class="faq-icon">+</span>
                 </div>
                 <div class="faq-answer">
-                    <span data-tr="Once 'Ayarlar > Rollback > Her Seyi Geri Yukle' ile tum tweak'leri geri alin. Sonra klasoru silin. Registry'ye kalici hicbir sey yazilmaz."
-                          data-en="First restore all tweaks via 'Settings > Rollback > Restore All'. Then delete the folder. Nothing is permanently written to registry.">
-                        Once "Ayarlar > Rollback > Her Seyi Geri Yukle" ile tum tweak'leri geri alin. Sonra klasoru silin. Registry'ye kalici hicbir sey yazilmaz.
+                    <span data-tr="Once 'Ayarlar > Rollback > Her Seyi Geri Yukle' ile tum tweak'leri geri alin. Sonra klasoru silin."
+                          data-en="First restore all tweaks via 'Settings > Rollback > Restore All'. Then delete the folder.">
+                        Once "Ayarlar > Rollback > Her Seyi Geri Yukle" ile tum tweak'leri geri alin. Sonra klasoru silin.
                     </span>
                 </div>
             </div>
-
             <div class="faq-item fade-in" onclick="toggleFaq(this)">
                 <div class="faq-question">
                     <span data-tr="Sorun bildirimi nereden yapabilirim?" data-en="Where can I report issues?">Sorun bildirimi nereden yapabilirim?</span>
@@ -2330,34 +1882,13 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     NEWSLETTER
-     ============================================================ -->
-<section>
-    <div class="container">
-        <div class="newsletter fade-in">
-            <h3 data-tr="Guncellemelerden haberdar ol" data-en="Stay updated">Guncellemelerden haberdar ol</h3>
-            <p data-tr="Yeni surumler ve ozellikler icin e-posta adresini birak."
-               data-en="Leave your email for new versions and features.">
-                Yeni surumler ve ozellikler icin e-posta adresini birak.
-            </p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Kaydedildi! (demo)');">
-                <input type="email" placeholder="ornek@email.com" required>
-                <button type="submit" class="btn btn-primary" data-tr="Abone Ol" data-en="Subscribe">Abone Ol</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================
-     CTA
-     ============================================================ -->
+<!-- CTA -->
 <section>
     <div class="container">
         <div class="cta fade-in">
             <h2 data-tr="Hemen indir, farki gor" data-en="Download now, see the difference">Hemen indir, farki gor</h2>
             <p data-tr="32 sekme, 20 tema, 15+ tweak. Hepsi ucretsiz." data-en="32 tabs, 20 themes, 15+ tweaks. All free.">32 sekme, 20 tema, 15+ tweak. Hepsi ucretsiz.</p>
-            <a href="#download" class="btn btn-primary btn-large" style="font-size: 16px;">
+            <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/download/V8.0.0/GameForge.exe" target="_blank" class="btn btn-primary btn-large" style="font-size: 16px;">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                     <polyline points="7 10 12 15 17 10"/>
@@ -2369,9 +1900,7 @@ footer {
     </div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-     ============================================================ -->
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -2388,7 +1917,7 @@ footer {
                     Windows icin akilli oyun optimizasyon araci. Guvenli, geri alinabilir, ucretsiz.
                 </p>
                 <div class="footer-social">
-                    <a href="https://github.com/KULLANICI/gameforge" target="_blank" class="social-btn" title="GitHub">
+                    <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web" target="_blank" class="social-btn" title="GitHub">
                         <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                             <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 3 1.4 3.7 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/>
                         </svg>
@@ -2400,7 +1929,6 @@ footer {
                     </a>
                 </div>
             </div>
-
             <div class="footer-col">
                 <h4 data-tr="Urun" data-en="Product">Urun</h4>
                 <ul>
@@ -2410,7 +1938,6 @@ footer {
                     <li><a href="#download" data-tr="Indir" data-en="Download">Indir</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4 data-tr="Kaynaklar" data-en="Resources">Kaynaklar</h4>
                 <ul>
@@ -2420,18 +1947,16 @@ footer {
                     <li><a href="#faq" data-tr="SSS" data-en="FAQ">SSS</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h4 data-tr="Topluluk" data-en="Community">Topluluk</h4>
                 <ul>
                     <li><a href="https://discord.gg/2wUv8yTt6" target="_blank">Discord</a></li>
-                    <li><a href="https://github.com/KULLANICI/gameforge" target="_blank">GitHub</a></li>
+                    <li><a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web" target="_blank">GitHub</a></li>
                     <li><a href="#discord" data-tr="Iletisim" data-en="Contact">Iletisim</a></li>
                     <li><a href="#discord" data-tr="Topluluk Tweak" data-en="Community Tweaks">Topluluk Tweak</a></li>
                 </ul>
             </div>
         </div>
-
         <div class="footer-bottom">
             <div>
                 &copy; <span id="year">2025</span> <span class="studio">GameGameStudios</span>.
@@ -2446,23 +1971,14 @@ footer {
     </div>
 </footer>
 
-<!-- ============================================================
-     BACK TO TOP
-     ============================================================ -->
 <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Yukari">&#8593;</button>
 
-<!-- ============================================================
-     LIGHTBOX
-     ============================================================ -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
     <div class="lightbox-content" id="lightboxContent">Screenshot</div>
 </div>
 
 <script>
-// ============================================================
-// MOBILE MENU
-// ============================================================
 function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
 }
@@ -2472,9 +1988,6 @@ document.querySelectorAll('.nav-links a').forEach(a => {
     });
 });
 
-// ============================================================
-// FAQ
-// ============================================================
 function toggleFaq(el) {
     document.querySelectorAll('.faq-item').forEach(item => {
         if (item !== el) item.classList.remove('open');
@@ -2482,20 +1995,13 @@ function toggleFaq(el) {
     el.classList.toggle('open');
 }
 
-// ============================================================
-// SCROLL PROGRESS
-// ============================================================
 window.addEventListener('scroll', () => {
     const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight -
-                   document.documentElement.clientHeight;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrolled = (winScroll / height) * 100;
     document.getElementById('progressBar').style.width = scrolled + '%';
 });
 
-// ============================================================
-// SCROLL ANIMATIONS
-// ============================================================
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -2503,9 +2009,6 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// ============================================================
-// COUNTER ANIMATION
-// ============================================================
 function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-counter'));
     const duration = 1500;
@@ -2527,52 +2030,36 @@ const counterObserver = new IntersectionObserver((entries) => {
         }
     });
 }, { threshold: 0.5 });
-document.querySelectorAll('[data-counter]').forEach(el => {
-    counterObserver.observe(el);
-});
+document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
 
-// ============================================================
-// BACK TO TOP
-// ============================================================
 const backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 500) backToTop.classList.add('visible');
     else backToTop.classList.remove('visible');
 });
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-// ============================================================
-// THEME TOGGLE
-// ============================================================
 function toggleTheme() {
     const html = document.documentElement;
     const current = html.getAttribute('data-theme') || 'dark';
     const next = current === 'dark' ? 'light' : 'dark';
     html.setAttribute('data-theme', next);
-    document.getElementById('themeBtn').innerHTML =
-        next === 'dark' ? '&#9789;' : '&#9728;&#65039;';
+    document.getElementById('themeBtn').innerHTML = next === 'dark' ? '&#9789;' : '&#9728;&#65039;';
     localStorage.setItem('theme', next);
 }
 (function() {
     const saved = localStorage.getItem('theme') || 'dark';
     document.documentElement.setAttribute('data-theme', saved);
-    document.getElementById('themeBtn').innerHTML =
-        saved === 'dark' ? '&#9789;' : '&#9728;&#65039;';
+    document.getElementById('themeBtn').innerHTML = saved === 'dark' ? '&#9789;' : '&#9728;&#65039;';
 })();
 
-// ============================================================
-// LANGUAGE TOGGLE
-// ============================================================
 let currentLang = localStorage.getItem('lang') || 'tr';
 function applyLang() {
     document.querySelectorAll('[data-tr]').forEach(el => {
         const text = el.getAttribute('data-' + currentLang);
         if (text) el.textContent = text;
     });
-    document.getElementById('langBtn').textContent =
-        currentLang === 'tr' ? 'TR' : 'EN';
+    document.getElementById('langBtn').textContent = currentLang === 'tr' ? 'TR' : 'EN';
     document.documentElement.lang = currentLang;
     localStorage.setItem('lang', currentLang);
 }
@@ -2582,9 +2069,6 @@ function toggleLang() {
 }
 applyLang();
 
-// ============================================================
-// LIGHTBOX
-// ============================================================
 function openLightbox(title) {
     document.getElementById('lightboxContent').textContent = title;
     document.getElementById('lightbox').classList.add('open');
@@ -2594,13 +2078,8 @@ function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
     document.body.style.overflow = '';
 }
-document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
-});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-// ============================================================
-// COPYRIGHT YEAR
-// ============================================================
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
