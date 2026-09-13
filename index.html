@@ -4,62 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GameForge - Windows Oyun Optimizasyon</title>
-<meta name="description" content="GameForge - Windows icin akilli oyun optimizasyon araci. 32 sekme, 20 tema, 15+ tweak. Guvenli, geri alinabilir, ucretsiz.">
+<meta name="description" content="GameForge - Windows icin akilli oyun optimizasyon araci. 32 sekme, 20 tema, 15+ tweak.">
 <meta name="theme-color" content="#070a10">
-<meta property="og:title" content="GameForge - Windows Oyun Optimizasyon">
-<meta property="og:description" content="Windows icin akilli oyun optimizasyon araci. Guvenli, geri alinabilir, ucretsiz.">
-<meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23070a10'/><text x='50' y='68' font-size='52' font-weight='900' text-anchor='middle' fill='%2343d9ff' font-family='Arial'>GF</text></svg>">
 
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-    --bg: #070a10;
-    --bg-secondary: #0a0e16;
-    --panel: #0e141e;
-    --panel2: #141c28;
-    --panel3: #192334;
-    --text: #edf5ff;
-    --muted: #7e8ca1;
-    --accent: #43d9ff;
-    --accent2: #b06bff;
-    --good: #56e39b;
-    --warn: #ffc85c;
-    --red: #ff657a;
-    --border: #1f2a3a;
-    --shadow: rgba(0, 0, 0, .4);
-    --glow: rgba(67, 217, 255, .15);
+    --bg: #070a10; --bg-secondary: #0a0e16; --panel: #0e141e;
+    --panel2: #141c28; --panel3: #192334; --text: #edf5ff;
+    --muted: #7e8ca1; --accent: #43d9ff; --accent2: #b06bff;
+    --good: #56e39b; --warn: #ffc85c; --red: #ff657a;
+    --border: #1f2a3a; --shadow: rgba(0,0,0,.4); --glow: rgba(67,217,255,.15);
 }
 [data-theme="light"] {
-    --bg: #f4f6fa;
-    --bg-secondary: #ffffff;
-    --panel: #ffffff;
-    --panel2: #eaeef5;
-    --panel3: #dde5f0;
-    --text: #0d1420;
-    --muted: #5b6776;
-    --accent: #0a7fa0;
-    --accent2: #7c3aed;
-    --good: #1c9a5e;
-    --warn: #a86a00;
-    --red: #c32d45;
-    --border: #d6dde8;
-    --shadow: rgba(0, 0, 0, .08);
-    --glow: rgba(10, 127, 160, .12);
+    --bg: #f4f6fa; --bg-secondary: #ffffff; --panel: #ffffff;
+    --panel2: #eaeef5; --panel3: #dde5f0; --text: #0d1420;
+    --muted: #5b6776; --accent: #0a7fa0; --accent2: #7c3aed;
+    --good: #1c9a5e; --warn: #a86a00; --red: #c32d45;
+    --border: #d6dde8; --shadow: rgba(0,0,0,.08); --glow: rgba(10,127,160,.12);
 }
 
-/* KRITIK: scroll-behavior: smooth KALDIRILDI (JS cakismasi vardi) */
 html { scroll-padding-top: 80px; }
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    overflow-x: hidden;
-    transition: background .3s, color .3s;
-}
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; transition: background .3s, color .3s; }
 
 .gradient-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
 .gradient-bg::before, .gradient-bg::after { content: ''; position: absolute; border-radius: 50%; filter: blur(80px); opacity: .35; }
@@ -69,26 +37,21 @@ body {
 @keyframes float2 { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-100px, -50px); } }
 
 .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); width: 0%; z-index: 999; transition: width .1s; }
-
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 a { color: var(--accent); text-decoration: none; transition: opacity .2s; }
 a:hover { opacity: .8; }
 img { max-width: 100%; display: block; }
 
 /* NAVBAR */
-.navbar { position: sticky; top: 0; z-index: 100; background: rgba(7, 10, 16, .85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
-[data-theme="light"] .navbar { background: rgba(244, 246, 250, .85); }
+.navbar { position: sticky; top: 0; z-index: 100; background: rgba(7,10,16,.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+[data-theme="light"] .navbar { background: rgba(244,246,250,.85); }
 .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 70px; }
 .logo { display: flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: var(--text); text-decoration: none; }
 .logo-svg { width: 36px; height: 36px; filter: drop-shadow(0 0 8px var(--glow)); }
 .logo-text span { color: var(--accent); }
-
 .nav-links { display: flex; gap: 20px; list-style: none; align-items: center; }
 .nav-links a { color: var(--muted); font-size: 14px; font-weight: 500; position: relative; }
 .nav-links a:hover { color: var(--text); opacity: 1; }
-.nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width .3s; }
-.nav-links a:hover::after { width: 100%; }
-
 .nav-tools { display: flex; gap: 8px; align-items: center; }
 .icon-btn { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: var(--panel2); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; color: var(--text); font-size: 16px; transition: all .2s; text-decoration: none; }
 .icon-btn:hover { background: var(--panel3); border-color: var(--accent); transform: translateY(-1px); opacity: 1; }
@@ -107,15 +70,13 @@ img { max-width: 100%; display: block; }
 /* HERO */
 .hero { padding: 90px 0 60px; }
 .hero-content { max-width: 850px; margin: 0 auto; text-align: center; }
-.badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 100px; background: var(--panel2); border: 1px solid var(--border); font-size: 13px; color: var(--muted); margin-bottom: 28px; backdrop-filter: blur(10px); }
+.badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 16px; border-radius: 100px; background: var(--panel2); border: 1px solid var(--border); font-size: 13px; color: var(--muted); margin-bottom: 28px; }
 .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--good); box-shadow: 0 0 10px var(--good); animation: pulse 2s infinite; }
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .5; transform: scale(.85); } }
-
 .hero h1 { font-size: clamp(34px, 5.5vw, 64px); font-weight: 900; line-height: 1.05; letter-spacing: -.02em; margin-bottom: 22px; }
 .hero h1 span { background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .hero p { font-size: 19px; color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
 .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
-
 .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
 .stat { text-align: center; padding: 24px 20px; background: var(--panel); border-radius: 14px; border: 1px solid var(--border); transition: all .3s; }
 .stat:hover { border-color: var(--accent); transform: translateY(-4px); }
@@ -130,9 +91,7 @@ section { padding: 90px 0; }
 
 /* FEATURES */
 .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
-.feature { padding: 30px; background: var(--panel); border: 1px solid var(--border); border-radius: 16px; transition: all .35s cubic-bezier(.4, 0, .2, 1); position: relative; overflow: hidden; }
-.feature::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); transform: translateX(-100%); transition: transform .5s; }
-.feature:hover::before { transform: translateX(0); }
+.feature { padding: 30px; background: var(--panel); border: 1px solid var(--border); border-radius: 16px; transition: all .35s; position: relative; overflow: hidden; }
 .feature:hover { border-color: var(--accent); transform: translateY(-6px); box-shadow: 0 20px 40px var(--shadow); }
 .feature-icon { width: 54px; height: 54px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--glow), transparent); border: 1px solid var(--border); border-radius: 12px; font-size: 24px; margin-bottom: 20px; }
 .feature h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; }
@@ -147,7 +106,7 @@ section { padding: 90px 0; }
 .screenshot:hover .screenshot-overlay { opacity: 1; }
 
 /* LIGHTBOX */
-.lightbox { position: fixed; inset: 0; background: rgba(0, 0, 0, .9); z-index: 9999; display: none; align-items: center; justify-content: center; cursor: zoom-out; padding: 40px; }
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.9); z-index: 9999; display: none; align-items: center; justify-content: center; cursor: zoom-out; padding: 40px; }
 .lightbox.open { display: flex; }
 .lightbox-content { max-width: 90vw; max-height: 90vh; border-radius: 14px; background: var(--panel2); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--muted); font-weight: 700; aspect-ratio: 16/9; width: 100%; }
 .lightbox-close { position: absolute; top: 20px; right: 24px; font-size: 32px; color: #fff; cursor: pointer; background: none; border: none; line-height: 1; }
@@ -162,7 +121,6 @@ section { padding: 90px 0; }
 .showcase-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; margin-top: 20px; }
 .showcase-list li { font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
 .showcase-list li::before { content: '\2713'; color: var(--good); font-weight: 800; flex-shrink: 0; }
-
 .showcase-visual { position: relative; }
 .visual-box { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px var(--shadow); }
 .visual-header { display: flex; align-items: center; gap: 14px; padding: 12px 18px; background: var(--panel2); border-bottom: 1px solid var(--border); }
@@ -185,21 +143,18 @@ section { padding: 90px 0; }
 .spec-icon { font-size: 22px; }
 .spec-title { font-size: 13px; font-weight: 700; }
 .spec-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
-
 .gpu-panel { padding: 24px 32px; }
 .slider-group { margin-bottom: 20px; }
 .slider-label { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
 .slider-value { color: var(--accent); }
 .slider-track { height: 6px; background: var(--panel2); border-radius: 3px; overflow: hidden; }
-.slider-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 3px; transition: width .3s; }
-
+.slider-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 3px; }
 .bench-panel { padding: 20px; }
 .bench-table { width: 100%; border-collapse: collapse; font-size: 13px; }
 .bench-table th { padding: 10px; text-align: left; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border); }
 .bench-table td { padding: 12px 10px; border-bottom: 1px solid var(--border); color: var(--text); }
 .bench-table td.good { color: var(--good); font-weight: 700; }
 .bench-table tr:last-child td { border-bottom: none; }
-
 .advisor-panel { padding: 28px; }
 .advisor-line { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
 .advisor-key { font-size: 13px; font-weight: 700; width: 50px; color: var(--muted); }
@@ -211,7 +166,7 @@ section { padding: 90px 0; }
 
 /* MODES */
 .modes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; }
-.mode-card { padding: 28px; background: var(--panel); border: 1px solid var(--border); border-radius: 18px; transition: all .3s; position: relative; }
+.mode-card { padding: 28px; background: var(--panel); border: 1px solid var(--border); border-radius: 18px; transition: all .3s; }
 .mode-card:hover { transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 20px 40px var(--shadow); }
 .mode-card.highlighted { border-color: var(--accent); box-shadow: 0 0 40px var(--glow); }
 .mode-badge { display: inline-block; padding: 5px 12px; border-radius: 100px; font-size: 11px; font-weight: 900; letter-spacing: 1.5px; margin-bottom: 16px; }
@@ -235,7 +190,6 @@ section { padding: 90px 0; }
 .download-version { font-size: 14px; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
 .download-name { font-size: 32px; font-weight: 900; margin-bottom: 8px; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 .download-meta { font-size: 13px; color: var(--muted); display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-
 .download-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
 .download-btn { padding: 20px 24px; background: var(--panel2); border: 1px solid var(--border); border-radius: 12px; text-align: left; cursor: pointer; transition: all .25s; display: flex; align-items: center; gap: 16px; color: var(--text); text-decoration: none; }
 .download-btn:hover { border-color: var(--accent); background: var(--panel3); transform: translateY(-2px); opacity: 1; box-shadow: 0 12px 32px var(--glow); }
@@ -243,7 +197,6 @@ section { padding: 90px 0; }
 .download-btn .os-info { flex: 1; }
 .download-btn .os-name { font-weight: 800; font-size: 16px; }
 .download-btn .os-ext { font-size: 12px; color: var(--muted); margin-top: 4px; }
-
 .sysreq { background: var(--panel2); border-radius: 12px; padding: 20px; }
 .sysreq h4 { font-size: 13px; font-weight: 800; color: var(--text); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
 .sysreq ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; }
@@ -259,10 +212,9 @@ section { padding: 90px 0; }
 .comparison td.yes { color: var(--good); font-weight: 700; }
 .comparison td.no { color: var(--red); font-weight: 700; }
 .comparison tr:last-child td { border-bottom: none; }
-.comparison tbody tr { transition: background .2s; }
 .comparison tbody tr:hover { background: var(--panel2); }
 
-/* ROADMAP - TIMELINE */
+/* ROADMAP */
 .roadmap-timeline { position: relative; padding-left: 40px; max-width: 800px; margin: 0 auto; }
 .roadmap-timeline::before { content: ''; position: absolute; left: 12px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2)); }
 .roadmap-item { position: relative; padding: 20px 0 30px 20px; }
@@ -272,28 +224,228 @@ section { padding: 90px 0; }
 .roadmap-item h3 { font-size: 18px; font-weight: 900; margin-bottom: 6px; color: var(--text); }
 .roadmap-item .roadmap-status { display: inline-block; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
 .roadmap-item p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.status-done { background: var(--good); color: #000; }
+.status-active { background: var(--accent); color: #000; }
+.status-planned { background: var(--panel3); color: var(--muted); }
 
-/* TESTIMONIALS */
-.testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
-.testimonial { padding: 26px; background: var(--panel); border: 1px solid var(--border); border-radius: 16px; position: relative; transition: all .3s; }
-.testimonial:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 20px 40px var(--shadow); }
-.testimonial-quote { font-size: 15px; color: var(--text); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
-.testimonial-quote::before { content: '"'; font-size: 40px; color: var(--accent); line-height: 0; vertical-align: -18px; margin-right: 6px; opacity: .5; }
-.testimonial-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--border); }
-.testimonial-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-weight: 900; color: #000; font-size: 16px; }
-.testimonial-name { font-weight: 700; font-size: 14px; color: var(--text); }
-.testimonial-role { font-size: 12px; color: var(--muted); }
-.testimonial-stars { color: var(--warn); margin-bottom: 12px; font-size: 14px; }
+/* REVIEWS - YENI */
+.reviews-container { max-width: 900px; margin: 0 auto; }
+
+.review-form {
+    padding: 32px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+.review-form h3 { font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+.review-form > p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+.review-form .form-row { margin-bottom: 18px; }
+.review-form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+.review-form input[type="text"],
+.review-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--panel2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color .2s, box-shadow .2s;
+    resize: vertical;
+}
+.review-form input[type="text"]:focus,
+.review-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--glow);
+}
+.review-form textarea { min-height: 100px; }
+.review-form .char-count {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: right;
+    margin-top: 4px;
+}
+.review-form .char-count.warning { color: var(--warn); }
+
+/* Yildiz secici */
+.star-picker {
+    display: flex;
+    gap: 6px;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+}
+.star-picker .star {
+    color: var(--panel3);
+    transition: color .2s, transform .2s;
+    line-height: 1;
+}
+.star-picker .star:hover { transform: scale(1.15); }
+.star-picker .star.active,
+.star-picker .star.hover { color: var(--warn); }
+
+.review-form .form-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 22px;
+}
+.review-form .error-msg {
+    color: var(--red);
+    font-size: 13px;
+    margin-top: 8px;
+    display: none;
+}
+.review-form .error-msg.show { display: block; }
+.review-form .success-msg {
+    color: var(--good);
+    font-size: 13px;
+    margin-top: 8px;
+    display: none;
+}
+.review-form .success-msg.show { display: block; }
+
+/* Yorum listesi */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.reviews-header h3 {
+    font-size: 20px;
+    font-weight: 800;
+}
+.reviews-header .avg-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.reviews-header .avg-rating .stars {
+    color: var(--warn);
+    letter-spacing: 2px;
+}
+
+.review-item {
+    padding: 22px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: all .3s;
+    position: relative;
+}
+.review-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px var(--shadow);
+}
+.review-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.review-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: #000;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+.review-name {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--text);
+}
+.review-date {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+.review-stars {
+    color: var(--warn);
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+.review-delete {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all .2s;
+}
+.review-delete:hover {
+    background: var(--panel3);
+    border-color: var(--red);
+    color: var(--red);
+}
+.review-text {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+    word-wrap: break-word;
+}
+.empty-reviews {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-size: 15px;
+    background: var(--panel);
+    border: 1px dashed var(--border);
+    border-radius: 16px;
+}
+.empty-reviews .empty-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: .5;
+}
 
 /* DISCORD */
 .discord-banner { display: grid; grid-template-columns: auto 1fr auto; gap: 32px; align-items: center; padding: 40px; background: linear-gradient(135deg, #5865f2 0%, #7289da 100%); border-radius: 24px; position: relative; overflow: hidden; color: #fff; }
-.discord-banner::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255, 255, 255, .15), transparent 70%); pointer-events: none; }
-.discord-icon { width: 96px; height: 96px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, .15); border-radius: 24px; color: #fff; position: relative; }
+.discord-banner::before { content: ''; position: absolute; top: -50%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,255,255,.15), transparent 70%); pointer-events: none; }
+.discord-icon { width: 96px; height: 96px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,.15); border-radius: 24px; color: #fff; position: relative; }
 .discord-content { position: relative; }
-.discord-content .section-label { color: rgba(255, 255, 255, .8); }
+.discord-content .section-label { color: rgba(255,255,255,.8); }
 .discord-content h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: #fff; margin: 8px 0 12px; letter-spacing: -.02em; }
-.discord-content p { font-size: 15px; color: rgba(255, 255, 255, .9); line-height: 1.6; max-width: 520px; margin-bottom: 16px; }
-.discord-members { display: flex; align-items: center; gap: 12px; font-size: 13px; color: rgba(255, 255, 255, .9); font-weight: 600; }
+.discord-content p { font-size: 15px; color: rgba(255,255,255,.9); line-height: 1.6; max-width: 520px; margin-bottom: 16px; }
+.discord-members { display: flex; align-items: center; gap: 12px; font-size: 13px; color: rgba(255,255,255,.9); font-weight: 600; }
 .member-avatars { display: flex; }
 .member-avatars span { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #43d9ff, #b06bff); border: 2px solid #5865f2; margin-left: -10px; }
 .member-avatars span:first-child { margin-left: 0; }
@@ -301,22 +453,43 @@ section { padding: 90px 0; }
 .member-avatars span:nth-child(3) { background: linear-gradient(135deg, #56e39b, #43d9ff); }
 .member-avatars span:nth-child(4) { background: linear-gradient(135deg, #b06bff, #ff657a); }
 .discord-cta { position: relative; text-align: center; }
-.discord-url { margin-top: 12px; font-size: 12px; color: rgba(255, 255, 255, .75); font-family: 'Consolas', monospace; letter-spacing: .5px; }
+.discord-url { margin-top: 12px; font-size: 12px; color: rgba(255,255,255,.75); font-family: 'Consolas', monospace; letter-spacing: .5px; }
 
-/* FAQ */
+/* FAQ - DUZELTILDI */
 .faq-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
 .faq-item { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color .2s; }
 .faq-item:hover { border-color: var(--accent); }
 .faq-item.open { border-color: var(--accent); }
-.faq-question { padding: 22px 26px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 15px; user-select: none; gap: 16px; }
-.faq-icon { font-size: 22px; color: var(--accent); transition: transform .3s; flex-shrink: 0; }
+.faq-question {
+    padding: 22px 26px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    user-select: none;
+    gap: 16px;
+}
+.faq-question:hover { background: var(--panel2); }
+.faq-icon { font-size: 22px; color: var(--accent); transition: transform .3s; flex-shrink: 0; display: inline-block; }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .4s; color: var(--muted); font-size: 14px; padding: 0 26px; line-height: 1.7; }
-.faq-item.open .faq-answer { max-height: 400px; padding: 0 26px 22px; }
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease, padding .4s;
+    color: var(--muted);
+    font-size: 14px;
+    padding: 0 26px;
+    line-height: 1.7;
+}
+.faq-item.open .faq-answer {
+    max-height: 500px;
+    padding: 0 26px 22px;
+}
 
 /* CTA */
 .cta { text-align: center; padding: 70px 40px; background: linear-gradient(135deg, var(--panel2), var(--panel3)); border-radius: 24px; border: 1px solid var(--border); position: relative; overflow: hidden; }
-.cta::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 700px; height: 400px; background: radial-gradient(circle, var(--glow), transparent 70%); pointer-events: none; }
 .cta h2 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 900; margin-bottom: 16px; position: relative; letter-spacing: -.02em; }
 .cta p { color: var(--muted); font-size: 17px; margin-bottom: 32px; position: relative; }
 .cta .btn { position: relative; }
@@ -346,8 +519,7 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
 /* RESPONSIVE */
 @media (max-width: 900px) {
     .nav-links { display: none; position: absolute; top: 70px; left: 0; right: 0; background: var(--panel); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); box-shadow: 0 20px 40px var(--shadow); }
-    .nav-links.open { display: flex; animation: slideDown .3s; }
-    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    .nav-links.open { display: flex; }
     .mobile-toggle { display: flex; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
     .footer-brand { grid-column: 1 / -1; }
@@ -372,6 +544,8 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
     .footer-bottom { flex-direction: column; text-align: center; }
     .nav-tools { gap: 4px; }
     .icon-btn { width: 32px; height: 32px; font-size: 14px; }
+    .review-form { padding: 22px 18px; }
+    .star-picker { font-size: 24px; }
 }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
@@ -409,7 +583,7 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
             <li><a href="#forge-mode">Forge Modu</a></li>
             <li><a href="#gpu-control">GPU</a></li>
             <li><a href="#modes">Modlar</a></li>
-            <li><a href="#comparison">Karsilastirma</a></li>
+            <li><a href="#reviews">Yorumlar</a></li>
             <li><a href="#faq">SSS</a></li>
         </ul>
         <div class="nav-tools">
@@ -431,33 +605,22 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
     <div class="container hero-content">
         <div class="badge">
             <div class="badge-dot"></div>
-            <span data-tr="v8.0.0 - Son surum yayinda" data-en="v8.0.0 - Latest release available">v8.0.0 - Son surum yayinda</span>
+            <span>v8.0.0 - Son surum yayinda</span>
         </div>
-        <h1>
-            <span data-tr="Oyun bilgisayarin icin" data-en="Smart optimization">Oyun bilgisayarin icin</span><br>
-            <span data-tr="akilli optimizasyon" data-en="for your gaming PC">akilli optimizasyon</span>
-        </h1>
-        <p data-tr="GameForge; guc plani, GPU kontrol, FPS olcumu, oyun profili ve dahasini tek yerde toplar."
-           data-en="GameForge combines power plans, GPU control, FPS measurement, game profiles and more.">
-            GameForge; guc plani, GPU kontrol, FPS olcumu, oyun profili ve dahasini tek yerde toplar.
-        </p>
+        <h1>Oyun bilgisayarin icin<br><span>akilli optimizasyon</span></h1>
+        <p>GameForge; guc plani, GPU kontrol, FPS olcumu, oyun profili ve dahasini tek yerde toplar.</p>
         <div class="hero-buttons">
             <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/download/V8.0.0/GameForge.exe" target="_blank" class="btn btn-primary btn-large">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                <span data-tr="Windows icin Indir" data-en="Download for Windows">Windows icin Indir</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Windows icin Indir
             </a>
-            <a href="#features" class="btn btn-ghost btn-large" data-tr="Ozellikleri Gor" data-en="View Features">Ozellikleri Gor</a>
+            <a href="#features" class="btn btn-ghost btn-large">Ozellikleri Gor</a>
         </div>
-
         <div class="stats">
-            <div class="stat"><div class="stat-value" data-counter="32">0</div><div class="stat-label" data-tr="Sekme" data-en="Tabs">Sekme</div></div>
-            <div class="stat"><div class="stat-value" data-counter="20">0</div><div class="stat-label" data-tr="Tema" data-en="Themes">Tema</div></div>
-            <div class="stat"><div class="stat-value" data-counter="15">0</div><div class="stat-label" data-tr="Tweak" data-en="Tweaks">Tweak</div></div>
-            <div class="stat"><div class="stat-value" data-counter="100">0</div><div class="stat-label" data-tr="% Geri Alinabilir" data-en="% Reversible">% Geri Alinabilir</div></div>
+            <div class="stat"><div class="stat-value" data-counter="32">0</div><div class="stat-label">Sekme</div></div>
+            <div class="stat"><div class="stat-value" data-counter="20">0</div><div class="stat-label">Tema</div></div>
+            <div class="stat"><div class="stat-value" data-counter="15">0</div><div class="stat-label">Tweak</div></div>
+            <div class="stat"><div class="stat-value" data-counter="100">0</div><div class="stat-label">% Geri Alinabilir</div></div>
         </div>
     </div>
 </section>
@@ -466,110 +629,23 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
 <section id="features">
     <div class="container">
         <div class="section-header fade-in">
-            <div class="section-label" data-tr="Ozellikler" data-en="Features">Ozellikler</div>
-            <h2 data-tr="Her sey tek programda" data-en="Everything in one app">Her sey tek programda</h2>
-            <p data-tr="Oyun bilgisayarinizi optimize etmek icin ihtiyaciniz olan tum araclar."
-               data-en="All the tools you need to optimize your gaming PC.">
-                Oyun bilgisayarinizi optimize etmek icin ihtiyaciniz olan tum araclar.
-            </p>
+            <div class="section-label">Ozellikler</div>
+            <h2>Her sey tek programda</h2>
+            <p>Oyun bilgisayarinizi optimize etmek icin ihtiyaciniz olan tum araclar.</p>
         </div>
         <div class="features-grid">
-            <div class="feature fade-in">
-                <div class="feature-icon">&#9881;&#65039;</div>
-                <h3 data-tr="Akilli Optimizasyon" data-en="Smart Optimization">Akilli Optimizasyon</h3>
-                <p data-tr="Guvenli, Dengeli ve Agresif modlar. Sisteminizi tarar, sadece gerekli tweak'leri onerir."
-                   data-en="Safe, Balanced and Aggressive modes. Recommends only necessary tweaks.">
-                    Guvenli, Dengeli ve Agresif modlar. Sisteminizi tarar, sadece gerekli tweak'leri onerir.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#127918;</div>
-                <h3 data-tr="Oyun Profilleri" data-en="Game Profiles">Oyun Profilleri</h3>
-                <p data-tr="Her oyun icin ayri profil. FPS hedefi, grafik onerisi, CPU/GPU tweak listesi."
-                   data-en="Separate profile for each game. Target FPS, graphics preset, CPU/GPU tweaks.">
-                    Her oyun icin ayri profil. FPS hedefi, grafik onerisi, CPU/GPU tweak listesi.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#128200;</div>
-                <h3 data-tr="Gercek FPS Olcumu" data-en="Real FPS Measurement">Gercek FPS Olcumu</h3>
-                <p data-tr="PresentMon ile ortalama, min, 1% low, 0.1% low, frametime."
-                   data-en="With PresentMon: average, min, 1% low, 0.1% low, frametime.">
-                    PresentMon ile ortalama, min, 1% low, 0.1% low, frametime.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#9878;&#65039;</div>
-                <h3 data-tr="Once/Sonra Karsilastirma" data-en="Before/After Comparison">Once/Sonra Karsilastirma</h3>
-                <p data-tr="Tweak uygula, etkisini olc. CPU ve RAM farki yuzde olarak gorunur."
-                   data-en="Apply tweak, measure impact. See CPU and RAM difference.">
-                    Tweak uygula, etkisini olc. CPU ve RAM farki yuzde olarak gorunur.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#128295;</div>
-                <h3 data-tr="GPU Kontrol" data-en="GPU Control">GPU Kontrol</h3>
-                <p data-tr="Fan hizi, power limit, clock offset. NVIDIA icin tam destek."
-                   data-en="Fan speed, power limit, clock offset. Full support for NVIDIA.">
-                    Fan hizi, power limit, clock offset. NVIDIA icin tam destek.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#127917;</div>
-                <h3 data-tr="Forge Modu" data-en="Forge Mode">Forge Modu</h3>
-                <p data-tr="Tek tusla tum optimizasyon. Arka plan, guc plani, overlay ve oyun profili birden."
-                   data-en="One click, all optimization. Background, power plan, overlay together.">
-                    Tek tusla tum optimizasyon. Arka plan, guc plani, overlay ve oyun profili birden.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#129302;</div>
-                <h3 data-tr="AI Danisman" data-en="AI Advisor">AI Danisman</h3>
-                <p data-tr="Canli bottleneck analizi. CPU mu, GPU mu, RAM mi sinirliyor?"
-                   data-en="Live bottleneck analysis. CPU, GPU or RAM limited?">
-                    Canli bottleneck analizi. CPU mu, GPU mu, RAM mi sinirliyor?
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#128737;&#65039;</div>
-                <h3 data-tr="Guvenli Rollback" data-en="Safe Rollback">Guvenli Rollback</h3>
-                <p data-tr="Her tweak oncesi snapshot. Acil durum butonu ile sistem eski haline."
-                   data-en="Snapshot before every tweak. Emergency button restores system.">
-                    Her tweak oncesi snapshot. Acil durum butonu ile sistem eski haline.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#128736;&#65039;</div>
-                <h3 data-tr="Onarim Merkezi" data-en="Repair Center">Onarim Merkezi</h3>
-                <p data-tr="SFC, DISM, DirectX, VC++ kontrolleri. Sorunlu bilesenleri kontrol et."
-                   data-en="SFC, DISM, DirectX, VC++ checks. Check problematic components.">
-                    SFC, DISM, DirectX, VC++ kontrolleri. Sorunlu bilesenleri kontrol et.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#127912;</div>
-                <h3 data-tr="20 Tema" data-en="20 Themes">20 Tema</h3>
-                <p data-tr="Dark blue, neon, matrix, dracula, nord, cyberpunk ve daha fazlasi."
-                   data-en="Dark blue, neon, matrix, dracula, nord, cyberpunk and more.">
-                    Dark blue, neon, matrix, dracula, nord, cyberpunk ve daha fazlasi.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#128225;</div>
-                <h3 data-tr="Ag Testi" data-en="Network Test">Ag Testi</h3>
-                <p data-tr="Ping, jitter, packet loss, DNS gecikmesi. Rekabetci oyuncular icin."
-                   data-en="Ping, jitter, packet loss, DNS latency. For competitive players.">
-                    Ping, jitter, packet loss, DNS gecikmesi. Rekabetci oyuncular icin.
-                </p>
-            </div>
-            <div class="feature fade-in">
-                <div class="feature-icon">&#9889;</div>
-                <h3 data-tr="Timer Resolution" data-en="Timer Resolution">Timer Resolution</h3>
-                <p data-tr="NtSetTimerResolution ile 0.5ms. Rekabetci oyunlarda input latency dusurur."
-                   data-en="0.5ms with NtSetTimerResolution. Reduces input latency.">
-                    NtSetTimerResolution ile 0.5ms. Rekabetci oyunlarda input latency dusurur.
-                </p>
-            </div>
+            <div class="feature fade-in"><div class="feature-icon">&#9881;&#65039;</div><h3>Akilli Optimizasyon</h3><p>Guvenli, Dengeli ve Agresif modlar. Sisteminizi tarar, sadece gerekli tweak'leri onerir.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#127918;</div><h3>Oyun Profilleri</h3><p>Her oyun icin ayri profil. FPS hedefi, grafik onerisi, CPU/GPU tweak listesi.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#128200;</div><h3>Gercek FPS Olcumu</h3><p>PresentMon ile ortalama, min, 1% low, 0.1% low, frametime.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#9878;&#65039;</div><h3>Once/Sonra Karsilastirma</h3><p>Tweak uygula, etkisini olc. CPU ve RAM farki yuzde olarak gorunur.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#128295;</div><h3>GPU Kontrol</h3><p>Fan hizi, power limit, clock offset. NVIDIA icin tam destek.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#127917;</div><h3>Forge Modu</h3><p>Tek tusla tum optimizasyon. Arka plan, guc plani, overlay ve oyun profili birden.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#129302;</div><h3>AI Danisman</h3><p>Canli bottleneck analizi. CPU mu, GPU mu, RAM mi sinirliyor?</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#128737;&#65039;</div><h3>Guvenli Rollback</h3><p>Her tweak oncesi snapshot. Acil durum butonu ile sistem eski haline.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#128736;&#65039;</div><h3>Onarim Merkezi</h3><p>SFC, DISM, DirectX, VC++ kontrolleri. Sorunlu bilesenleri kontrol et.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#127912;</div><h3>20 Tema</h3><p>Dark blue, neon, matrix, dracula, nord, cyberpunk ve daha fazlasi.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#128225;</div><h3>Ag Testi</h3><p>Ping, jitter, packet loss, DNS gecikmesi. Rekabetci oyuncular icin.</p></div>
+            <div class="feature fade-in"><div class="feature-icon">&#9889;</div><h3>Timer Resolution</h3><p>NtSetTimerResolution ile 0.5ms. Rekabetci oyunlarda input latency dusurur.</p></div>
         </div>
     </div>
 </section>
@@ -578,9 +654,9 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
 <section id="screenshots">
     <div class="container">
         <div class="section-header fade-in">
-            <div class="section-label" data-tr="Ekran Goruntuleri" data-en="Screenshots">Ekran Goruntuleri</div>
-            <h2 data-tr="Modern ve kullanisli" data-en="Modern and usable">Modern ve kullanisli</h2>
-            <p data-tr="32 sekme, sidebar navigasyon, 20 tema." data-en="32 tabs, sidebar navigation, 20 themes.">32 sekme, sidebar navigasyon, 20 tema.</p>
+            <div class="section-label">Ekran Goruntuleri</div>
+            <h2>Modern ve kullanisli</h2>
+            <p>32 sekme, sidebar navigasyon, 20 tema.</p>
         </div>
         <div class="screenshots">
             <div class="screenshot fade-in" onclick="openLightbox('Dashboard')"><div class="screenshot-placeholder">Dashboard</div><div class="screenshot-overlay"><span>Dashboard</span><span>&#128269;</span></div></div>
@@ -600,17 +676,17 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
             <div class="showcase-content fade-in">
                 <div class="section-label">Forge Modu</div>
                 <h2>Tek tus, tam optimizasyon</h2>
-                <p>Forge Modu aktif edildiginde GameForge otomatik olarak tum optimizasyonu uygular. Arka plan uygulamalarini yavaslatir, Windows Game Mode'u acar, guc planini yuksek performansa ceker, overlay'i acar ve oyun profilinizi uygular.</p>
+                <p>Forge Modu aktif edildiginde GameForge otomatik olarak tum optimizasyonu uygular.</p>
                 <p class="highlight">Oyun kapaninca veya "KAPAT" tusuna basinca tum ayarlar otomatik geri alinir.</p>
                 <ul class="showcase-list">
                     <li>Arka plan uygulamalarini yavaslatir</li>
                     <li>Windows Game Mode acar</li>
                     <li>Guc planini yuksek performansa ceker</li>
-                    <li>Timer Resolution 0.5 ms aktif eder</li>
+                    <li>Timer Resolution 0.5 ms</li>
                     <li>FPS ve sicaklik overlay'ini acar</li>
                     <li>Oyun profilini uygular</li>
                     <li>Bildirimleri gecici susturur</li>
-                    <li>Cikinca tum ayarlari otomatik geri alir</li>
+                    <li>Cikinca tum ayarlari geri alir</li>
                 </ul>
             </div>
             <div class="showcase-visual fade-in">
@@ -633,12 +709,12 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
             <div class="showcase-content fade-in">
                 <div class="section-label">GPU Kontrol</div>
                 <h2>Ekran kartina tam kontrol</h2>
-                <p>NVIDIA ekran kartlari icin NVML (NVIDIA Management Library) uzerinden fan hizi, guc limiti, cekirdek ve bellek frekansi ayarlari. AMD ve Intel icin okuma destegi.</p>
+                <p>NVIDIA ekran kartlari icin NVML uzerinden fan hizi, guc limiti, cekirdek ve bellek frekansi ayarlari.</p>
                 <div class="gpu-specs">
-                    <div class="spec-item"><div class="spec-icon">&#127788;&#65039;</div><div class="spec-info"><div class="spec-title">Fan Hizi</div><div class="spec-desc">0-100% arasi manuel kontrol</div></div></div>
+                    <div class="spec-item"><div class="spec-icon">&#127788;&#65039;</div><div class="spec-info"><div class="spec-title">Fan Hizi</div><div class="spec-desc">0-100% manuel kontrol</div></div></div>
                     <div class="spec-item"><div class="spec-icon">&#9889;</div><div class="spec-info"><div class="spec-title">Power Limit</div><div class="spec-desc">50-500W arasi ayar</div></div></div>
-                    <div class="spec-item"><div class="spec-icon">&#128200;</div><div class="spec-info"><div class="spec-title">Clock Offset</div><div class="spec-desc">-200 / +200 MHz arasi</div></div></div>
-                    <div class="spec-item"><div class="spec-icon">&#128190;</div><div class="spec-info"><div class="spec-title">Memory Offset</div><div class="spec-desc">-200 / +1000 MHz arasi</div></div></div>
+                    <div class="spec-item"><div class="spec-icon">&#128200;</div><div class="spec-info"><div class="spec-title">Clock Offset</div><div class="spec-desc">-200 / +200 MHz</div></div></div>
+                    <div class="spec-item"><div class="spec-icon">&#128190;</div><div class="spec-info"><div class="spec-title">Memory Offset</div><div class="spec-desc">-200 / +1000 MHz</div></div></div>
                 </div>
             </div>
             <div class="showcase-visual fade-in">
@@ -668,7 +744,7 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
             <div class="mode-card fade-in">
                 <div class="mode-badge mode-safe">GUVENLI</div>
                 <h3>Guvenli Mod</h3>
-                <p class="mode-desc">Dusuk risk, tamamen geri alinabilir. Acemi kullanicilar icin ideal.</p>
+                <p class="mode-desc">Dusuk risk, tamamen geri alinabilir.</p>
                 <ul class="mode-list"><li>Guc plani</li><li>Windows Game Mode</li><li>Gecici dosya temizligi</li><li>Shader cache temizligi</li></ul>
                 <div class="mode-risk"><span class="risk-label">Risk:</span><span class="risk-low">Dusuk</span></div>
             </div>
@@ -676,14 +752,14 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
                 <div class="mode-badge mode-balanced">DENGELI</div>
                 <h3>Dengeli Mod</h3>
                 <p class="mode-desc">Guvenli modun tum ozellikleri + ag ve servis yonetimi.</p>
-                <ul class="mode-list"><li>Guvenli mod ozellikleri</li><li>TCP ag optimizasyonu</li><li>Gereksiz servisleri durdurma</li><li>Process priority</li><li>RAM working set temizligi</li><li>Timer Resolution</li></ul>
+                <ul class="mode-list"><li>Guvenli mod ozellikleri</li><li>TCP ag optimizasyonu</li><li>Gereksiz servisleri durdurma</li><li>Process priority</li><li>RAM working set</li><li>Timer Resolution</li></ul>
                 <div class="mode-risk"><span class="risk-label">Risk:</span><span class="risk-medium">Orta</span></div>
             </div>
             <div class="mode-card fade-in">
                 <div class="mode-badge mode-aggressive">AGRESIF</div>
                 <h3>Agresif Mod</h3>
-                <p class="mode-desc">Registry ve riskli ayarlar. Ileri seviye kullanicilar icin.</p>
-                <ul class="mode-list"><li>Dengeli mod ozellikleri</li><li>Registry tweak'leri (HAGS, GameDVR)</li><li>Mouse accel kapatma</li><li>Klavye delay ayari</li><li>DNS degistirici</li></ul>
+                <p class="mode-desc">Registry ve riskli ayarlar. Ileri seviye.</p>
+                <ul class="mode-list"><li>Dengeli mod ozellikleri</li><li>Registry tweak'leri</li><li>Mouse accel kapatma</li><li>Klavye delay ayari</li><li>DNS degistirici</li></ul>
                 <div class="mode-risk"><span class="risk-label">Risk:</span><span class="risk-high">Yuksek</span></div>
             </div>
         </div>
@@ -704,7 +780,6 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
                     <li>Ortalama, min, 1% low, 0.1% low</li>
                     <li>Frametime analizi</li>
                     <li>CPU ve RAM yuzde farki</li>
-                    <li>Gecmis karsilastirma</li>
                 </ul>
             </div>
             <div class="showcase-visual fade-in">
@@ -758,29 +833,68 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
     </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
+<!-- YORUMLAR - YENI -->
+<section id="reviews">
     <div class="container">
         <div class="section-header fade-in">
-            <div class="section-label" data-tr="Kullanici Yorumlari" data-en="Testimonials">Kullanici Yorumlari</div>
-            <h2 data-tr="Kullanicilar ne diyor?" data-en="What users say?">Kullanicilar ne diyor?</h2>
-            <p data-tr="Topluluktan gercek geri bildirimler." data-en="Real feedback from the community.">Topluluktan gercek geri bildirimler.</p>
+            <div class="section-label">Yorumlar</div>
+            <h2>Kullanici yorumlari</h2>
+            <p>Deneyimini paylas. Yorumlar tarayicinda saklanir.</p>
         </div>
-        <div class="testimonials">
-            <div class="testimonial fade-in">
-                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <div class="testimonial-quote">CS2'de input latency gercekten dustu. 0.5ms timer resolution farki hissediliyor. Ayrica rollback ozelligi guven veriyor.</div>
-                <div class="testimonial-author"><div class="testimonial-avatar">MK</div><div><div class="testimonial-name">Mert K.</div><div class="testimonial-role">Rekabetci Oyuncu</div></div></div>
+
+        <div class="reviews-container">
+            <!-- Yorum formu -->
+            <div class="review-form fade-in">
+                <h3>Yorum Yaz</h3>
+                <p>GameForge hakkinda deneyimini paylas.</p>
+
+                <div class="form-row">
+                    <label for="reviewName">Adin (veya takma adin)</label>
+                    <input type="text" id="reviewName" placeholder="Ornegin: Ahmet K." maxlength="30">
+                </div>
+
+                <div class="form-row">
+                    <label>Puanin</label>
+                    <div class="star-picker" id="starPicker">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <label for="reviewText">Yorumun</label>
+                    <textarea id="reviewText" placeholder="GameForge hakkinda ne dusunuyorsun?" maxlength="500"></textarea>
+                    <div class="char-count" id="charCount">0 / 500</div>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary" onclick="submitReview()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        Yorumu Gonder
+                    </button>
+                </div>
+                <div class="error-msg" id="errorMsg"></div>
+                <div class="success-msg" id="successMsg"></div>
             </div>
-            <div class="testimonial fade-in">
-                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <div class="testimonial-quote">GPU fan curve'i MSI Afterburner gibi ayarlayabiliyorum. Ama asil guzel sey oyun kapaninca her seyin otomatik geri alinmasi.</div>
-                <div class="testimonial-author"><div class="testimonial-avatar">AY</div><div><div class="testimonial-name">Ayse Y.</div><div class="testimonial-role">Hikayeli Oyun</div></div></div>
+
+            <!-- Yorum listesi -->
+            <div class="reviews-header">
+                <h3 id="reviewsTitle">Yorumlar (0)</h3>
+                <div class="avg-rating" id="avgRating" style="display: none;">
+                    <span class="stars" id="avgStars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                    <span id="avgValue">0.0</span>
+                    <span style="color: var(--muted);">/ 5</span>
+                </div>
             </div>
-            <div class="testimonial fade-in">
-                <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <div class="testimonial-quote">AI Danisman "GPU bottleneck" dedi. DLSS actim, 20 FPS artti. Sorunu bana gostermesi cok yardimci oldu.</div>
-                <div class="testimonial-author"><div class="testimonial-avatar">SD</div><div><div class="testimonial-name">Selim D.</div><div class="testimonial-role">RDR2 Oyuncusu</div></div></div>
+
+            <div class="reviews-list" id="reviewsList">
+                <div class="empty-reviews">
+                    <div class="empty-icon">&#128172;</div>
+                    <div>Henuz yorum yok. Ilk yorumu sen yaz!</div>
+                </div>
             </div>
         </div>
     </div>
@@ -790,14 +904,13 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
 <section id="download">
     <div class="container">
         <div class="section-header fade-in">
-            <div class="section-label" data-tr="Indir" data-en="Download">Indir</div>
-            <h2 data-tr="Hemen indir" data-en="Download now">Hemen indir</h2>
-            <p data-tr="Windows 10 ve 11 icin. Ucretsiz, acik kaynak." data-en="For Windows 10 and 11. Free, open source.">Windows 10 ve 11 icin. Ucretsiz, acik kaynak.</p>
+            <div class="section-label">Indir</div>
+            <h2>Hemen indir</h2>
+            <p>Windows 10 ve 11 icin. Ucretsiz, acik kaynak.</p>
         </div>
-
         <div class="download-box fade-in">
             <div class="download-top">
-                <div class="download-version" data-tr="Son Surum" data-en="Latest Version">Son Surum</div>
+                <div class="download-version">Son Surum</div>
                 <div class="download-name">GameForge v8.0.0</div>
                 <div class="download-meta">
                     <span>&#128230; ~15 MB</span>
@@ -805,24 +918,22 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
                     <span>&#9989; Acik Kaynak</span>
                 </div>
             </div>
-
             <div class="download-grid">
                 <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/download/V8.0.0/GameForge.exe" target="_blank" class="download-btn">
                     <span class="os-icon">&#129302;</span>
                     <div class="os-info">
-                        <div class="os-name" data-tr="Windows icin Indir" data-en="Download for Windows">Windows icin Indir</div>
+                        <div class="os-name">Windows icin Indir</div>
                         <div class="os-ext">.exe - Kurulum gerekmez, cift tikla calistir</div>
                     </div>
                 </a>
             </div>
-
             <div class="sysreq">
-                <h4 data-tr="Sistem Gereksinimleri" data-en="System Requirements">Sistem Gereksinimleri</h4>
+                <h4>Sistem Gereksinimleri</h4>
                 <ul>
-                    <li data-tr="Windows 10 / 11" data-en="Windows 10 / 11">Windows 10 / 11</li>
-                    <li data-tr="4 GB RAM" data-en="4 GB RAM">4 GB RAM</li>
-                    <li data-tr="100 MB disk" data-en="100 MB disk">100 MB disk</li>
-                    <li data-tr="Yonetici yetkisi" data-en="Admin rights">Yonetici yetkisi</li>
+                    <li>Windows 10 / 11</li>
+                    <li>4 GB RAM</li>
+                    <li>100 MB disk</li>
+                    <li>Yonetici yetkisi</li>
                 </ul>
             </div>
         </div>
@@ -833,49 +944,49 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
 <section id="comparison">
     <div class="container">
         <div class="section-header fade-in">
-            <div class="section-label" data-tr="Karsilastirma" data-en="Comparison">Karsilastirma</div>
-            <h2 data-tr="Rakiplerden farkli" data-en="Different from competitors">Rakiplerden farkli</h2>
-            <p data-tr="Neden GameForge'u secmelisin?" data-en="Why choose GameForge?">Neden GameForge'u secmelisin?</p>
+            <div class="section-label">Karsilastirma</div>
+            <h2>Rakiplerden farkli</h2>
+            <p>Neden GameForge'u secmelisin?</p>
         </div>
         <div class="comparison fade-in">
             <table>
-                <thead><tr><th data-tr="Ozellik" data-en="Feature">Ozellik</th><th>GameForge</th><th>Razer Cortex</th><th>Wise Booster</th><th>MSI AB</th></tr></thead>
+                <thead><tr><th>Ozellik</th><th>GameForge</th><th>Razer Cortex</th><th>Wise Booster</th><th>MSI AB</th></tr></thead>
                 <tbody>
-                    <tr><td data-tr="Oyun optimizasyon" data-en="Game optimization">Oyun optimizasyon</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="no">&#10007;</td></tr>
-                    <tr><td data-tr="GPU kontrol" data-en="GPU control">GPU kontrol</td><td class="yes">NVIDIA</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="yes">&#10003;</td></tr>
-                    <tr><td data-tr="FPS olcumu" data-en="FPS measurement">FPS olcumu</td><td class="yes">Gercek</td><td class="no">Basit</td><td class="no">&#10007;</td><td class="yes">RTSS</td></tr>
-                    <tr><td data-tr="Rollback" data-en="Rollback">Rollback</td><td class="yes">Tam</td><td class="no">Sinirli</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
-                    <tr><td data-tr="Oyun profili" data-en="Game profiles">Oyun profili</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
-                    <tr><td data-tr="AI danisman" data-en="AI advisor">AI danisman</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
-                    <tr><td data-tr="Ucretsiz" data-en="Free">Ucretsiz</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
-                    <tr><td data-tr="Acik kaynak" data-en="Open source">Acik kaynak</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
+                    <tr><td>Oyun optimizasyon</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="no">&#10007;</td></tr>
+                    <tr><td>GPU kontrol</td><td class="yes">NVIDIA</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="yes">&#10003;</td></tr>
+                    <tr><td>FPS olcumu</td><td class="yes">Gercek</td><td class="no">Basit</td><td class="no">&#10007;</td><td class="yes">RTSS</td></tr>
+                    <tr><td>Rollback</td><td class="yes">Tam</td><td class="no">Sinirli</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
+                    <tr><td>Oyun profili</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
+                    <tr><td>AI danisman</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
+                    <tr><td>Ucretsiz</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td><td class="yes">&#10003;</td></tr>
+                    <tr><td>Acik kaynak</td><td class="yes">&#10003;</td><td class="no">&#10007;</td><td class="no">&#10007;</td><td class="no">&#10007;</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 </section>
 
-<!-- ROADMAP TIMELINE -->
+<!-- ROADMAP -->
 <section id="roadmap">
     <div class="container">
         <div class="section-header fade-in">
-            <div class="section-label" data-tr="Yol Haritasi" data-en="Roadmap">Yol Haritasi</div>
-            <h2 data-tr="Gelecek planlari" data-en="Future plans">Gelecek planlari</h2>
-            <p data-tr="Surerli gelisen bir proje." data-en="A continuously evolving project.">Surerli gelisen bir proje.</p>
+            <div class="section-label">Yol Haritasi</div>
+            <h2>Gelecek planlari</h2>
+            <p>Surerli gelisen bir proje.</p>
         </div>
         <div class="roadmap-timeline">
             <div class="roadmap-item done fade-in">
-                <span class="roadmap-status status-done" data-tr="Tamamlandi" data-en="Completed">Tamamlandi</span>
+                <span class="roadmap-status status-done">Tamamlandi</span>
                 <h3>V8.0.0</h3>
                 <p>32 sekme, 20 tema, 15 tweak, GPU kontrol, AI danisman, oyun profilleri.</p>
             </div>
             <div class="roadmap-item active fade-in">
-                <span class="roadmap-status status-active" data-tr="Gelistiriliyor" data-en="In Development">Gelistiriliyor</span>
+                <span class="roadmap-status status-active">Gelistiriliyor</span>
                 <h3>V8.1 / V8.2</h3>
                 <p>AMD/Intel GPU yazma destegi, Steam Web API, otomatik oyun algilama, gelismis AI.</p>
             </div>
             <div class="roadmap-item fade-in">
-                <span class="roadmap-status status-planned" data-tr="Planlandi" data-en="Planned">Planlandi</span>
+                <span class="roadmap-status status-planned">Planlandi</span>
                 <h3>V9.0.0</h3>
                 <p>RTSS tarzi enjeksiyon overlay, kendi ETW FPS hook, plugin market.</p>
             </div>
@@ -893,15 +1004,12 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
                 </svg>
             </div>
             <div class="discord-content">
-                <div class="section-label" data-tr="Topluluk" data-en="Community">Topluluk</div>
-                <h2 data-tr="Discord sunucumuza katil" data-en="Join our Discord server">Discord sunucumuza katil</h2>
-                <p data-tr="Yeni surumler, tweak paylasimi, sorun cozumu ve topluluk destegi icin Discord sunucumuza bekliyoruz."
-                   data-en="For new releases, tweak sharing, troubleshooting and community support, join our Discord.">
-                    Yeni surumler, tweak paylasimi, sorun cozumu ve topluluk destegi icin Discord sunucumuza bekliyoruz.
-                </p>
+                <div class="section-label">Topluluk</div>
+                <h2>Discord sunucumuza katil</h2>
+                <p>Yeni surumler, tweak paylasimi, sorun cozumu ve topluluk destegi icin Discord sunucumuza bekliyoruz.</p>
                 <div class="discord-members">
                     <div class="member-avatars"><span></span><span></span><span></span><span></span></div>
-                    <span data-tr="+100 uye aktif" data-en="+100 members active">+100 uye aktif</span>
+                    <span>+100 uye aktif</span>
                 </div>
             </div>
             <div class="discord-cta">
@@ -909,7 +1017,7 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
                     <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
                         <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                     </svg>
-                    <span data-tr="Discord'a Katil" data-en="Join Discord">Discord'a Katil</span>
+                    Discord'a Katil
                 </a>
                 <div class="discord-url">discord.gg/2wUv8yTt6</div>
             </div>
@@ -917,27 +1025,85 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
     </div>
 </section>
 
-<!-- FAQ -->
+<!-- FAQ - DUZELTILDI -->
 <section id="faq">
     <div class="container">
         <div class="section-header fade-in">
-            <div class="section-label" data-tr="SSS" data-en="FAQ">SSS</div>
-            <h2 data-tr="Sikca sorulan sorular" data-en="Frequently asked questions">Sikca sorulan sorular</h2>
-            <p data-tr="Merak edilenlerin cevaplari." data-en="Answers to common questions.">Merak edilenlerin cevaplari.</p>
+            <div class="section-label">SSS</div>
+            <h2>Sikca sorulan sorular</h2>
+            <p>Merak edilenlerin cevaplari.</p>
         </div>
-        <div class="faq-list">
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="GameForge ucretsiz mi?" data-en="Is GameForge free?">GameForge ucretsiz mi?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Evet, tamamen ucretsiz ve acik kaynak. Reklam yok, abonelik yok, veri toplama yok." data-en="Yes, completely free and open source. No ads, no subscriptions, no data collection.">Evet, tamamen ucretsiz ve acik kaynak. Reklam yok, abonelik yok, veri toplama yok.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Sistemimi bozar mi?" data-en="Will it break my system?">Sistemimi bozar mi?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Hayir. Her tweak uygulanmadan once snapshot alinir. 'Acil Durum' butonu ile her seyi saniyeler icinde eski haline dondurebilirsiniz." data-en="No. A snapshot is taken before every tweak. With the 'Emergency' button, you can restore everything in seconds.">Hayir. Her tweak uygulanmadan once snapshot alinir. "Acil Durum" butonu ile her seyi saniyeler icinde eski haline dondurebilirsiniz.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Hangi Windows surumleri desteklenir?" data-en="Which Windows versions are supported?">Hangi Windows surumleri desteklenir?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Windows 10 ve Windows 11. Windows 7/8 desteklenmiyor." data-en="Windows 10 and 11. Windows 7/8 not supported.">Windows 10 ve Windows 11. Windows 7/8 desteklenmiyor.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="FPS artisi ne kadar?" data-en="How much FPS gain?">FPS artisi ne kadar?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Durust cevap: tweak'ler ortalama %2-8 FPS etkisi yapar. Asil fark DLSS, undervolt ve grafik ayarlarindan gelir." data-en="Honest answer: tweaks have an average of 2-8% FPS impact. The real difference comes from DLSS, undervolt and graphics settings.">Durust cevap: tweak'ler ortalama %2-8 FPS etkisi yapar. Asil fark DLSS, undervolt ve grafik ayarlarindan gelir.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Verilerimi topluyor mu?" data-en="Does it collect my data?">Verilerimi topluyor mu?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Hayir. GameForge tamamen yerel calisir. Hicbir veri sunucuya gonderilmez." data-en="No. GameForge works entirely locally. No data sent to servers.">Hayir. GameForge tamamen yerel calisir. Hicbir veri sunucuya gonderilmez.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Steam disi oyunlari destekliyor mu?" data-en="Does it support non-Steam games?">Steam disi oyunlari destekliyor mu?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Evet. Steam, Epic, GOG, Xbox Game Pass, Ubisoft, EA App, Battle.net ve Riot Games kutuphanelerini otomatik tarar." data-en="Yes. Automatically scans Steam, Epic, GOG, Xbox Game Pass, Ubisoft, EA App, Battle.net and Riot Games libraries.">Evet. Steam, Epic, GOG, Xbox Game Pass, Ubisoft, EA App, Battle.net ve Riot Games kutuphanelerini otomatik tarar.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Antivirus uyarisi verir mi?" data-en="Will antivirus warn?">Antivirus uyarisi verir mi?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Yonetici yetkisi ve registry erisimi nedeniyle bazi antivirusler uyari verebilir. Bu normaldir, kod tamamen aciktir." data-en="Some antiviruses may warn due to admin privileges and registry access. This is normal, the code is fully open.">Yonetici yetkisi ve registry erisimi nedeniyle bazi antivirusler uyari verebilir. Bu normaldir, kod tamamen aciktir.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Nasil kaldirilir?" data-en="How to uninstall?">Nasil kaldirilir?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Once 'Ayarlar > Rollback > Her Seyi Geri Yukle' ile tum tweak'leri geri alin. Sonra klasoru silin." data-en="First restore all tweaks via 'Settings > Rollback > Restore All'. Then delete the folder.">Once "Ayarlar > Rollback > Her Seyi Geri Yukle" ile tum tweak'leri geri alin. Sonra klasoru silin.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Sorun bildirimi nereden yapabilirim?" data-en="Where can I report issues?">Sorun bildirimi nereden yapabilirim?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Discord sunucumuzda 'sorunlar' kanalinda sorun bildirimi yapabilirsiniz. En hizli yanit Discord'dadir." data-en="You can report issues in the 'issues' channel on our Discord server. Fastest response is on Discord.">Discord sunucumuzda "sorunlar" kanalinda sorun bildirimi yapabilirsiniz. En hizli yanit Discord'dadir.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Kaynak kod nerede?" data-en="Where is the source code?">Kaynak kod nerede?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="GitHub repo'muzda acik sekilde erisebilirsiniz: github.com/balcimuhsinefe975-rgb/GameForge.Web" data-en="Available publicly on our GitHub repo: github.com/balcimuhsinefe975-rgb/GameForge.Web">GitHub repo'muzda acik sekilde erisebilirsiniz: github.com/balcimuhsinefe975-rgb/GameForge.Web</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Ne kadar sik guncellenir?" data-en="How often is it updated?">Ne kadar sik guncellenir?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Aylik buyuk guncellemeler, haftalik kucuk yamalar. Yeni surumler GitHub Releases'te yayinlanir." data-en="Monthly major updates, weekly small patches. New versions are published on GitHub Releases.">Aylik buyuk guncellemeler, haftalik kucuk yamalar. Yeni surumler GitHub Releases'te yayinlanir.</span></div></div>
-            <div class="faq-item fade-in"><div class="faq-question"><span data-tr="Destege nasil katilabilirim?" data-en="How can I support?">Destege nasil katilabilirim?</span><span class="faq-icon">+</span></div><div class="faq-answer"><span data-tr="Discord sunucumuzda 'oneriler' ve 'sorunlar' kanalinda katkida bulunabilir, GitHub'da PR gonderebilirsiniz." data-en="You can contribute in the 'suggestions' and 'issues' channels on our Discord server, or send a PR on GitHub.">Discord sunucumuzda "oneriler" ve "sorunlar" kanalinda katkida bulunabilir, GitHub'da PR gonderebilirsiniz.</span></div></div>
+        <div class="faq-list" id="faqList">
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>GameForge ucretsiz mi?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Evet, tamamen ucretsiz ve acik kaynak. Reklam yok, abonelik yok, veri toplama yok.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Sistemimi bozar mi?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Hayir. Her tweak uygulanmadan once snapshot alinir. "Acil Durum" butonu ile her seyi saniyeler icinde eski haline dondurebilirsiniz.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Hangi Windows surumleri desteklenir?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Windows 10 ve Windows 11. Windows 7/8 desteklenmiyor.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>FPS artisi ne kadar?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Durust cevap: tweak'ler ortalama %2-8 FPS etkisi yapar. Asil fark DLSS, undervolt ve grafik ayarlarindan gelir.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Verilerimi topluyor mu?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Hayir. GameForge tamamen yerel calisir. Hicbir veri sunucuya gonderilmez.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Steam disi oyunlari destekliyor mu?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Evet. Steam, Epic, GOG, Xbox Game Pass, Ubisoft, EA App, Battle.net ve Riot Games kutuphanelerini otomatik tarar.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Antivirus uyarisi verir mi?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Yonetici yetkisi ve registry erisimi nedeniyle bazi antivirusler uyari verebilir. Bu normaldir, kod tamamen aciktir.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Nasil kaldirilir?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Once "Ayarlar > Rollback > Her Seyi Geri Yukle" ile tum tweak'leri geri alin. Sonra klasoru silin.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Sorun bildirimi nereden yapabilirim?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">Discord sunucumuzda "sorunlar" kanalinda sorun bildirimi yapabilirsiniz. En hizli yanit Discord'dadir.</div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Kaynak kod nerede?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">GitHub repo'muzda acik sekilde erisebilirsiniz: github.com/balcimuhsinefe975-rgb/GameForge.Web</div>
+            </div>
         </div>
     </div>
 </section>
@@ -946,15 +1112,11 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
 <section>
     <div class="container">
         <div class="cta fade-in">
-            <h2 data-tr="Hemen indir, farki gor" data-en="Download now, see the difference">Hemen indir, farki gor</h2>
-            <p data-tr="32 sekme, 20 tema, 15+ tweak. Hepsi ucretsiz." data-en="32 tabs, 20 themes, 15+ tweaks. All free.">32 sekme, 20 tema, 15+ tweak. Hepsi ucretsiz.</p>
+            <h2>Hemen indir, farki gor</h2>
+            <p>32 sekme, 20 tema, 15+ tweak. Hepsi ucretsiz.</p>
             <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/download/V8.0.0/GameForge.exe" target="_blank" class="btn btn-primary btn-large" style="font-size: 16px;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                    <polyline points="7 10 12 15 17 10"/>
-                    <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-                <span data-tr="GameForge v8.0.0 Indir" data-en="Download GameForge v8.0.0">GameForge v8.0.0 Indir</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                GameForge v8.0.0 Indir
             </a>
         </div>
     </div>
@@ -972,54 +1134,50 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
                     </svg>
                     <div class="logo-text">GAME<span>FORGE</span></div>
                 </div>
-                <p data-tr="Windows icin akilli oyun optimizasyon araci. Guvenli, geri alinabilir, ucretsiz." data-en="Smart game optimization tool for Windows. Safe, reversible, free.">Windows icin akilli oyun optimizasyon araci. Guvenli, geri alinabilir, ucretsiz.</p>
+                <p>Windows icin akilli oyun optimizasyon araci. Guvenli, geri alinabilir, ucretsiz.</p>
                 <div class="footer-social">
                     <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web" target="_blank" class="social-btn" title="GitHub">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                            <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 3 1.4 3.7 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 3 1.4 3.7 1 .1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/></svg>
                     </a>
                     <a href="https://discord.gg/2wUv8yTt6" target="_blank" class="social-btn discord-btn" title="Discord">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
-                            <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
                     </a>
                 </div>
             </div>
             <div class="footer-col">
-                <h4 data-tr="Urun" data-en="Product">Urun</h4>
+                <h4>Urun</h4>
                 <ul>
-                    <li><a href="#features" data-tr="Ozellikler" data-en="Features">Ozellikler</a></li>
-                    <li><a href="#screenshots" data-tr="Ekranlar" data-en="Screenshots">Ekranlar</a></li>
-                    <li><a href="#comparison" data-tr="Karsilastirma" data-en="Comparison">Karsilastirma</a></li>
-                    <li><a href="#download" data-tr="Indir" data-en="Download">Indir</a></li>
+                    <li><a href="#features">Ozellikler</a></li>
+                    <li><a href="#screenshots">Ekranlar</a></li>
+                    <li><a href="#comparison">Karsilastirma</a></li>
+                    <li><a href="#download">Indir</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4 data-tr="Kaynaklar" data-en="Resources">Kaynaklar</h4>
+                <h4>Kaynaklar</h4>
                 <ul>
-                    <li><a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web" target="_blank" data-tr="GitHub" data-en="GitHub">GitHub</a></li>
-                    <li><a href="#roadmap" data-tr="Yol Haritasi" data-en="Roadmap">Yol Haritasi</a></li>
-                    <li><a href="#faq" data-tr="SSS" data-en="FAQ">SSS</a></li>
-                    <li><a href="#testimonials" data-tr="Yorumlar" data-en="Testimonials">Yorumlar</a></li>
+                    <li><a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web" target="_blank">GitHub</a></li>
+                    <li><a href="#roadmap">Yol Haritasi</a></li>
+                    <li><a href="#faq">SSS</a></li>
+                    <li><a href="#reviews">Yorumlar</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4 data-tr="Topluluk" data-en="Community">Topluluk</h4>
+                <h4>Topluluk</h4>
                 <ul>
                     <li><a href="https://discord.gg/2wUv8yTt6" target="_blank">Discord</a></li>
                     <li><a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web" target="_blank">GitHub</a></li>
-                    <li><a href="#discord" data-tr="Iletisim" data-en="Contact">Iletisim</a></li>
-                    <li><a href="#discord" data-tr="Destek" data-en="Support">Destek</a></li>
+                    <li><a href="#discord">Iletisim</a></li>
+                    <li><a href="#discord">Destek</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <div>&copy; <span id="year">2025</span> <span class="studio">GameGameStudios</span>. <span data-tr="Tum haklari saklidir." data-en="All rights reserved.">Tum haklari saklidir.</span></div>
+            <div>&copy; <span id="year">2025</span> <span class="studio">GameGameStudios</span>. Tum haklari saklidir.</div>
             <div>
-                <a href="#" data-tr="Gizlilik" data-en="Privacy">Gizlilik</a> &middot;
-                <a href="#" data-tr="Sartlar" data-en="Terms">Sartlar</a> &middot;
-                <a href="#" data-tr="Lisans" data-en="License">Lisans</a>
+                <a href="#">Gizlilik</a> &middot;
+                <a href="#">Sartlar</a> &middot;
+                <a href="#">Lisans</a>
             </div>
         </div>
     </div>
@@ -1033,27 +1191,39 @@ footer { background: var(--bg-secondary); border-top: 1px solid var(--border); p
 </div>
 
 <script>
-// Navbar mobile toggle
+/* ============================================================
+   NAVBAR
+   ============================================================ */
 function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('open');
 }
-
-// Navbar linklerine tiklayinca menuyu kapat (mobil)
 document.querySelectorAll('.nav-links a').forEach(a => {
     a.addEventListener('click', () => {
         document.getElementById('navLinks').classList.remove('open');
     });
 });
 
-// FAQ akordiyon
-function toggleFaq(el) {
-    document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== el) item.classList.remove('open');
+/* ============================================================
+   FAQ (DUZELTILDI)
+   ============================================================ */
+function toggleFaq(questionEl) {
+    const item = questionEl.parentElement;
+    const wasOpen = item.classList.contains('open');
+
+    // Hepsini kapat
+    document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
     });
-    el.classList.toggle('open');
+
+    // Eger kapaliysa ac
+    if (!wasOpen) {
+        item.classList.add('open');
+    }
 }
 
-// Progress bar
+/* ============================================================
+   PROGRESS BAR
+   ============================================================ */
 window.addEventListener('scroll', () => {
     const winScroll = document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1061,7 +1231,9 @@ window.addEventListener('scroll', () => {
     document.getElementById('progressBar').style.width = scrolled + '%';
 });
 
-// Fade in animation
+/* ============================================================
+   FADE IN
+   ============================================================ */
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('visible');
@@ -1069,7 +1241,9 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// Counter animation
+/* ============================================================
+   COUNTERS
+   ============================================================ */
 function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-counter'));
     const duration = 1500;
@@ -1093,7 +1267,9 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
 
-// Back to top
+/* ============================================================
+   BACK TO TOP
+   ============================================================ */
 const backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 500) backToTop.classList.add('visible');
@@ -1101,7 +1277,9 @@ window.addEventListener('scroll', () => {
 });
 function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-// Theme toggle
+/* ============================================================
+   THEME
+   ============================================================ */
 function toggleTheme() {
     const html = document.documentElement;
     const current = html.getAttribute('data-theme') || 'dark';
@@ -1116,24 +1294,9 @@ function toggleTheme() {
     document.getElementById('themeBtn').innerHTML = saved === 'dark' ? '&#9789;' : '&#9728;&#65039;';
 })();
 
-// Language toggle
-let currentLang = localStorage.getItem('lang') || 'tr';
-function applyLang() {
-    document.querySelectorAll('[data-tr]').forEach(el => {
-        const text = el.getAttribute('data-' + currentLang);
-        if (text) el.textContent = text;
-    });
-    document.getElementById('langBtn').textContent = currentLang === 'tr' ? 'TR' : 'EN';
-    document.documentElement.lang = currentLang;
-    localStorage.setItem('lang', currentLang);
-}
-function toggleLang() {
-    currentLang = currentLang === 'tr' ? 'en' : 'tr';
-    applyLang();
-}
-applyLang();
-
-// Lightbox
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
 function openLightbox(title) {
     document.getElementById('lightboxContent').textContent = title;
     document.getElementById('lightbox').classList.add('open');
@@ -1145,7 +1308,238 @@ function closeLightbox() {
 }
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-// Copyright year
+/* ============================================================
+   YORUMLAR (REVIEWS) - localStorage
+   ============================================================ */
+const STORAGE_KEY = 'gameforge_reviews';
+let currentRating = 0;
+
+// localStorage'dan yorumlari yukle
+function loadReviews() {
+    try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+    } catch (e) {
+        return [];
+    }
+}
+
+// localStorage'a kaydet
+function saveReviews(reviews) {
+    try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(reviews));
+    } catch (e) {
+        // localStorage dolu olabilir
+    }
+}
+
+// Tarihi formatla
+function formatDate(iso) {
+    const d = new Date(iso);
+    const now = new Date();
+    const diff = (now - d) / 1000; // saniye
+
+    if (diff < 60) return 'az once';
+    if (diff < 3600) return `${Math.floor(diff / 60)} dk once`;
+    if (diff < 86400) return `${Math.floor(diff / 3600)} saat once`;
+    if (diff < 604800) return `${Math.floor(diff / 86400)} gun once`;
+
+    return d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+// Isimden avatar harfi
+function getInitials(name) {
+    if (!name) return '?';
+    const parts = name.trim().split(/\s+/);
+    if (parts.length >= 2) {
+        return (parts[0][0] + parts[1][0]).toUpperCase();
+    }
+    return name.substring(0, 2).toUpperCase();
+}
+
+// Yildiz goster
+function renderStars(rating) {
+    let s = '';
+    for (let i = 1; i <= 5; i++) {
+        s += i <= rating ? '&#9733;' : '&#9734;';
+    }
+    return s;
+}
+
+// Yorumlari render et
+function renderReviews() {
+    const reviews = loadReviews();
+    const list = document.getElementById('reviewsList');
+    const title = document.getElementById('reviewsTitle');
+    const avgRating = document.getElementById('avgRating');
+
+    title.textContent = `Yorumlar (${reviews.length})`;
+
+    if (reviews.length === 0) {
+        list.innerHTML = `
+            <div class="empty-reviews">
+                <div class="empty-icon">&#128172;</div>
+                <div>Henuz yorum yok. Ilk yorumu sen yaz!</div>
+            </div>
+        `;
+        avgRating.style.display = 'none';
+        return;
+    }
+
+    // Ortalama puan
+    const sum = reviews.reduce((a, r) => a + r.rating, 0);
+    const avg = (sum / reviews.length).toFixed(1);
+    document.getElementById('avgValue').textContent = avg;
+    document.getElementById('avgStars').innerHTML = renderStars(Math.round(avg));
+    avgRating.style.display = 'flex';
+
+    // Yorumlari listele (en yeni ustte)
+    const sorted = [...reviews].sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    list.innerHTML = sorted.map((r, idx) => `
+        <div class="review-item">
+            <div class="review-item-header">
+                <div class="review-author">
+                    <div class="review-avatar">${getInitials(r.name)}</div>
+                    <div>
+                        <div class="review-name">${escapeHtml(r.name)}</div>
+                        <div class="review-date">${formatDate(r.date)}</div>
+                    </div>
+                </div>
+                <button class="review-delete" onclick="deleteReview('${r.id}')" title="Sil">&#128465;</button>
+            </div>
+            <div class="review-stars">${renderStars(r.rating)}</div>
+            <div class="review-text" style="margin-top: 10px;">${escapeHtml(r.text)}</div>
+        </div>
+    `).join('');
+}
+
+// HTML escape (XSS koruma)
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
+// Yildiz secici
+document.querySelectorAll('#starPicker .star').forEach(star => {
+    star.addEventListener('click', () => {
+        currentRating = parseInt(star.dataset.value);
+        updateStars(currentRating);
+    });
+    star.addEventListener('mouseenter', () => {
+        updateStars(parseInt(star.dataset.value));
+    });
+});
+document.getElementById('starPicker').addEventListener('mouseleave', () => {
+    updateStars(currentRating);
+});
+
+function updateStars(rating) {
+    document.querySelectorAll('#starPicker .star').forEach(s => {
+        const val = parseInt(s.dataset.value);
+        s.classList.toggle('active', val <= rating);
+    });
+}
+
+// Karakter sayaci
+const reviewText = document.getElementById('reviewText');
+if (reviewText) {
+    reviewText.addEventListener('input', () => {
+        const len = reviewText.value.length;
+        const counter = document.getElementById('charCount');
+        counter.textContent = `${len} / 500`;
+        counter.classList.toggle('warning', len > 450);
+    });
+}
+
+// Yorum gonder
+function submitReview() {
+    const nameInput = document.getElementById('reviewName');
+    const textInput = document.getElementById('reviewText');
+    const errorMsg = document.getElementById('errorMsg');
+    const successMsg = document.getElementById('successMsg');
+
+    errorMsg.classList.remove('show');
+    successMsg.classList.remove('show');
+
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
+
+    // Validasyon
+    if (!name) {
+        errorMsg.textContent = 'Lutfen adini yaz.';
+        errorMsg.classList.add('show');
+        return;
+    }
+    if (name.length < 2) {
+        errorMsg.textContent = 'Ad en az 2 karakter olmali.';
+        errorMsg.classList.add('show');
+        return;
+    }
+    if (currentRating === 0) {
+        errorMsg.textContent = 'Lutfen puan ver (1-5 yildiz).';
+        errorMsg.classList.add('show');
+        return;
+    }
+    if (!text) {
+        errorMsg.textContent = 'Lutfen yorumunu yaz.';
+        errorMsg.classList.add('show');
+        return;
+    }
+    if (text.length < 10) {
+        errorMsg.textContent = 'Yorum en az 10 karakter olmali.';
+        errorMsg.classList.add('show');
+        return;
+    }
+
+    // Yorum olustur
+    const review = {
+        id: 'rev_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6),
+        name: name,
+        rating: currentRating,
+        text: text,
+        date: new Date().toISOString()
+    };
+
+    // Kaydet
+    const reviews = loadReviews();
+    reviews.push(review);
+    saveReviews(reviews);
+
+    // Formu temizle
+    nameInput.value = '';
+    textInput.value = '';
+    document.getElementById('charCount').textContent = '0 / 500';
+    document.getElementById('charCount').classList.remove('warning');
+    currentRating = 0;
+    updateStars(0);
+
+    // Basari mesaji
+    successMsg.textContent = 'Yorumun kaydedildi!';
+    successMsg.classList.add('show');
+    setTimeout(() => successMsg.classList.remove('show'), 3000);
+
+    // Listeyi guncelle
+    renderReviews();
+}
+
+// Yorum sil
+function deleteReview(id) {
+    if (!confirm('Bu yorumu silmek istediginize emin misiniz?')) return;
+
+    let reviews = loadReviews();
+    reviews = reviews.filter(r => r.id !== id);
+    saveReviews(reviews);
+    renderReviews();
+}
+
+// Sayfa yuklenince yorumlari goster
+renderReviews();
+
+/* ============================================================
+   COPYRIGHT YILI
+   ============================================================ */
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
