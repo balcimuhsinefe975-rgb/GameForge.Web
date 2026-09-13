@@ -1,0 +1,39 @@
+{
+  "name": "GameForge - Akıllı Oyun Optimizasyonu",
+  "short_name": "GameForge",
+  "description": "Windows oyunlarınız için akıllı optimizasyon aracı.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#070a10",
+  "theme_color": "#43d9ff",
+  "lang": "tr",
+  "scope": "/",
+  "categories": ["utilities", "games", "productivity"],
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "İndir",
+      "url": "/#downloads",
+      "description": "GameForge'u indir"
+    },
+    {
+      "name": "Özellikler",
+      "url": "/#features",
+      "description": "Özellikleri gör"
+    }
+  ]
+}
