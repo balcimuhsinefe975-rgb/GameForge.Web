@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="tr" data-theme="dark">
+<html lang="tr" data-theme="dark" data-accent="blue">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
@@ -8,9 +7,6 @@
 <meta name="description" content="GameForge - Windows için akıllı oyun optimizasyon aracı. FPS artır, gecikmeyi düşür, sistemini optimize et.">
 <meta name="keywords" content="gameforge, oyun optimizasyon, fps artırma, windows gaming, gecikme düşürme">
 <meta name="author" content="GameGameStudios">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="mobile-web-app-capable" content="yes">
 <meta property="og:title" content="GameForge - Akıllı Oyun Optimizasyonu">
 <meta property="og:description" content="Windows oyunlarınız için akıllı optimizasyon. FPS artır, gecikmeyi düşür.">
 <meta property="og:type" content="website">
@@ -20,22 +16,22 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Preloader -->
+<!-- ===== PRELOADER ===== -->
 <div id="preloader">
   <div class="preloader-inner">
     <div class="preloader-logo">
       <span class="preloader-game">GAME</span><span class="preloader-forge">FORGE</span>
     </div>
     <div class="preloader-bar"><div class="preloader-fill"></div></div>
-    <div class="preloader-text">Yükleniyor...</div>
+    <div class="preloader-text">Sistem optimize ediliyor...</div>
   </div>
 </div>
 
-<!-- Navbar -->
+<!-- ===== NAVBAR ===== -->
 <header class="navbar" id="navbar">
   <div class="nav-container">
     <a href="index.html" class="nav-logo">
@@ -51,7 +47,8 @@
 
     <nav class="nav-links" id="navLinks">
       <a href="#features" class="nav-link">Özellikler</a>
-      <a href="#how" class="nav-link">Nasıl Çalışır</a>
+      <a href="#screenshots" class="nav-link">Ekran Görüntüleri</a>
+      <a href="#requirements" class="nav-link">Gereksinimler</a>
       <a href="#downloads" class="nav-link">İndir</a>
       <a href="pages/docs.html" class="nav-link">Dokümantasyon</a>
       <a href="pages/changelog.html" class="nav-link">Sürümler</a>
@@ -59,16 +56,55 @@
     </nav>
 
     <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="4"/>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      <!-- TEMA SEÇİCİ -->
+      <div class="theme-picker" id="themePicker">
+        <button class="theme-toggle" id="themeToggle" aria-label="Tema değiştir">
+          <svg class="icon-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>
+          </svg>
+        </button>
+        <div class="theme-dropdown" id="themeDropdown">
+          <div class="theme-dropdown-title">Tema Seç</div>
+          <div class="theme-options">
+            <button class="theme-option" data-theme="dark" data-accent="blue">
+              <span class="theme-swatch" style="--swatch: linear-gradient(135deg,#0a0e17,#00d4ff)"></span>
+              <span>Dark Blue</span>
+            </button>
+            <button class="theme-option" data-theme="dark" data-accent="cyberpunk">
+              <span class="theme-swatch" style="--swatch: linear-gradient(135deg,#1a0033,#ff00ea)"></span>
+              <span>Cyberpunk</span>
+            </button>
+            <button class="theme-option" data-theme="dark" data-accent="matrix">
+              <span class="theme-swatch" style="--swatch: linear-gradient(135deg,#000,#00ff41)"></span>
+              <span>Matrix</span>
+            </button>
+            <button class="theme-option" data-theme="dark" data-accent="neon">
+              <span class="theme-swatch" style="--swatch: linear-gradient(135deg,#0f0c29,#f857a6)"></span>
+              <span>Neon</span>
+            </button>
+            <button class="theme-option" data-theme="dark" data-accent="aurora">
+              <span class="theme-swatch" style="--swatch: linear-gradient(135deg,#0f2027,#7f5af0)"></span>
+              <span>Aurora</span>
+            </button>
+            <button class="theme-option" data-theme="light" data-accent="blue">
+              <span class="theme-swatch" style="--swatch: linear-gradient(135deg,#f8fafc,#2563eb)"></span>
+              <span>Light</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/latest" 
+         class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
         </svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-        </svg>
-      </button>
-      <a href="#downloads" class="btn btn-primary btn-sm">İndir</a>
+        İndir
+      </a>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
         <span></span><span></span><span></span>
       </button>
@@ -76,12 +112,14 @@
   </div>
 </header>
 
-<!-- HERO -->
+<!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-bg">
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-glow hero-glow-3"></div>
     <div class="hero-grid"></div>
+    <div class="hero-particles" id="particles"></div>
   </div>
 
   <div class="container hero-container">
@@ -89,6 +127,7 @@
       <div class="hero-badge">
         <span class="badge-dot"></span>
         <span>v8.3.0 Yayında</span>
+        <span class="badge-new">YENİ</span>
       </div>
       <h1 class="hero-title">
         Oyununuzu<br>
@@ -99,7 +138,8 @@
         gecikmeyi düşürün, sisteminizi bir oyun makinesine dönüştürün.
       </p>
       <div class="hero-actions">
-        <a href="#downloads" class="btn btn-primary btn-lg">
+        <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/latest" 
+           class="btn btn-primary btn-lg" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
           </svg>
@@ -126,7 +166,7 @@
     </div>
 
     <div class="hero-visual">
-      <div class="hero-mockup">
+      <div class="mockup-window">
         <div class="mockup-titlebar">
           <div class="mockup-dots">
             <span class="dot dot-red"></span>
@@ -137,12 +177,14 @@
         </div>
         <div class="mockup-body">
           <div class="mockup-sidebar">
-            <div class="mockup-sidebar-item active">Panel</div>
-            <div class="mockup-sidebar-item">Kütüphane</div>
-            <div class="mockup-sidebar-item">Başlatıcı</div>
-            <div class="mockup-sidebar-item">Profiller</div>
-            <div class="mockup-sidebar-item">Sağlık</div>
-            <div class="mockup-sidebar-item">İzleme</div>
+            <div class="mockup-sidebar-item active">
+              <span class="sidebar-dot"></span> Panel
+            </div>
+            <div class="mockup-sidebar-item"><span class="sidebar-dot"></span> Kütüphane</div>
+            <div class="mockup-sidebar-item"><span class="sidebar-dot"></span> Başlatıcı</div>
+            <div class="mockup-sidebar-item"><span class="sidebar-dot"></span> Profiller</div>
+            <div class="mockup-sidebar-item"><span class="sidebar-dot"></span> Sağlık</div>
+            <div class="mockup-sidebar-item"><span class="sidebar-dot"></span> İzleme</div>
           </div>
           <div class="mockup-content">
             <div class="mockup-header">
@@ -153,19 +195,39 @@
               <div class="mockup-card">
                 <div class="mockup-card-label">CPU</div>
                 <div class="mockup-card-value">%42</div>
+                <div class="mockup-card-bar"><div style="width:42%"></div></div>
               </div>
               <div class="mockup-card">
                 <div class="mockup-card-label">RAM</div>
                 <div class="mockup-card-value">%61</div>
+                <div class="mockup-card-bar"><div style="width:61%"></div></div>
               </div>
               <div class="mockup-card">
                 <div class="mockup-card-label">GPU</div>
                 <div class="mockup-card-value">68°C</div>
+                <div class="mockup-card-bar"><div style="width:68%"></div></div>
               </div>
             </div>
             <div class="mockup-progress">
-              <div class="mockup-progress-label">Optimizasyon</div>
+              <div class="mockup-progress-label">
+                <span>Optimizasyon</span>
+                <span class="mockup-progress-pct">78%</span>
+              </div>
               <div class="mockup-progress-bar"><div class="mockup-progress-fill"></div></div>
+            </div>
+            <div class="mockup-mini-stats">
+              <div class="mini-stat">
+                <div class="mini-stat-label">FPS</div>
+                <div class="mini-stat-value">144</div>
+              </div>
+              <div class="mini-stat">
+                <div class="mini-stat-label">Gecikme</div>
+                <div class="mini-stat-value">8ms</div>
+              </div>
+              <div class="mini-stat">
+                <div class="mini-stat-label">Sıcaklık</div>
+                <div class="mini-stat-value">68°C</div>
+              </div>
             </div>
           </div>
         </div>
@@ -179,7 +241,7 @@
   </div>
 </section>
 
-<!-- TRUST -->
+<!-- ===== TRUST ===== -->
 <section class="trust">
   <div class="container">
     <p class="trust-label">Güvenilen platformlarla çalışır</p>
@@ -194,7 +256,7 @@
   </div>
 </section>
 
-<!-- ÖZELLİKLER -->
+<!-- ===== FEATURES ===== -->
 <section class="features" id="features">
   <div class="container">
     <div class="section-header">
@@ -216,6 +278,7 @@
         <p class="feature-desc">
           Sistem profilinize göre otomatik tweak seçimi. Güvenli, dengeli veya agresif mod.
         </p>
+        <div class="feature-tag">AI Destekli</div>
       </div>
 
       <div class="feature-card">
@@ -229,6 +292,7 @@
         <p class="feature-desc">
           Steam, Epic, GOG, Riot ve daha fazlasından otomatik oyun algılama + kapak resimleri.
         </p>
+        <div class="feature-tag">6 Platform</div>
       </div>
 
       <div class="feature-card">
@@ -242,6 +306,7 @@
         <p class="feature-desc">
           Tek tıkla tüm optimizasyonları uygula. Oyun kapanınca otomatik geri al.
         </p>
+        <div class="feature-tag">Tek Tık</div>
       </div>
 
       <div class="feature-card">
@@ -255,6 +320,7 @@
         <p class="feature-desc">
           CPU, GPU, RAM, sıcaklık ve FPS değerlerini gerçek zamanlı takip et.
         </p>
+        <div class="feature-tag">Real-time</div>
       </div>
 
       <div class="feature-card">
@@ -268,6 +334,7 @@
         <p class="feature-desc">
           Her değişiklik snapshot alınır. Tek tıkla tüm ayarları geri yükle.
         </p>
+        <div class="feature-tag">Geri Alınabilir</div>
       </div>
 
       <div class="feature-card">
@@ -280,6 +347,7 @@
         <p class="feature-desc">
           Vanguard, EAC, BattlEye algılar ve riskli tweak'leri otomatik atlar.
         </p>
+        <div class="feature-tag">Güvenli</div>
       </div>
 
       <div class="feature-card">
@@ -293,6 +361,7 @@
         <p class="feature-desc">
           Her oyun için ayrı optimizasyon profili. Rekabetçi, hikayeli, MMO ve daha fazlası.
         </p>
+        <div class="feature-tag">Kişiselleştirilebilir</div>
       </div>
 
       <div class="feature-card">
@@ -305,80 +374,306 @@
         <p class="feature-desc">
           Dark blue, neon, cyberpunk, matrix ve daha fazlası. Kendi temanı oluştur.
         </p>
+        <div class="feature-tag">Özelleştirilebilir</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NASIL ÇALIŞIR -->
-<section class="how-it-works" id="how">
+<!-- ===== SCREENSHOTS ===== -->
+<section class="screenshots" id="screenshots">
   <div class="container">
     <div class="section-header">
-      <div class="section-badge">NASIL ÇALIŞIR</div>
-      <h2 class="section-title">3 adımda optimize</h2>
-      <p class="section-subtitle">
-        Karmaşık ayarlar yok. Sadece seç, uygula, oyna.
-      </p>
+      <div class="section-badge">GALERİ</div>
+      <h2 class="section-title">GameForge'u keşfet</h2>
+      <p class="section-subtitle">Modern arayüz, akıcı deneyim.</p>
     </div>
 
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">01</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="3"/>
-            <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
-          </svg>
+    <div class="screenshot-tabs">
+      <button class="tab-btn active" data-tab="dashboard">Panel</button>
+      <button class="tab-btn" data-tab="library">Kütüphane</button>
+      <button class="tab-btn" data-tab="monitor">İzleme</button>
+      <button class="tab-btn" data-tab="gpu">GPU Kontrol</button>
+      <button class="tab-btn" data-tab="profiles">Profiller</button>
+    </div>
+
+    <div class="screenshot-viewer">
+      <div class="screenshot-item active" data-tab="dashboard">
+        <div class="screenshot-mockup">
+          <div class="sm-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="sm-title">Panel - GameForge</span>
+          </div>
+          <div class="sm-body">
+            <div class="sm-sidebar">
+              <div class="sm-side-item active">📊 Panel</div>
+              <div class="sm-side-item">🎮 Kütüphane</div>
+              <div class="sm-side-item">🚀 Başlatıcı</div>
+              <div class="sm-side-item">⚙️ Profiller</div>
+              <div class="sm-side-item">💚 Sağlık</div>
+              <div class="sm-side-item">📈 İzleme</div>
+            </div>
+            <div class="sm-main">
+              <div class="sm-header">
+                <span class="sm-badge">MOD: DENGELİ</span>
+                <span class="sm-health">SAĞLIK: 94</span>
+              </div>
+              <div class="sm-cards">
+                <div class="sm-card"><div class="sm-label">CPU</div><div class="sm-val">%42</div></div>
+                <div class="sm-card"><div class="sm-label">RAM</div><div class="sm-val">%61</div></div>
+                <div class="sm-card"><div class="sm-label">GPU</div><div class="sm-val">68°C</div></div>
+                <div class="sm-card"><div class="sm-label">FPS</div><div class="sm-val">144</div></div>
+              </div>
+              <div class="sm-chart">
+                <div class="sm-chart-bar" style="height:30%"></div>
+                <div class="sm-chart-bar" style="height:55%"></div>
+                <div class="sm-chart-bar" style="height:42%"></div>
+                <div class="sm-chart-bar" style="height:78%"></div>
+                <div class="sm-chart-bar" style="height:60%"></div>
+                <div class="sm-chart-bar" style="height:88%"></div>
+                <div class="sm-chart-bar" style="height:70%"></div>
+                <div class="sm-chart-bar" style="height:95%"></div>
+                <div class="sm-chart-bar" style="height:65%"></div>
+                <div class="sm-chart-bar" style="height:82%"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h3 class="step-title">Modunu Seç</h3>
-        <p class="step-desc">
-          Güvenli, Dengeli veya Agresif. Sistemine uygun olanı seç.
-        </p>
       </div>
 
-      <div class="step-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </div>
-
-      <div class="step">
-        <div class="step-number">02</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-          </svg>
+      <div class="screenshot-item" data-tab="library">
+        <div class="screenshot-mockup">
+          <div class="sm-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="sm-title">Kütüphane - GameForge</span>
+          </div>
+          <div class="sm-body">
+            <div class="sm-sidebar">
+              <div class="sm-side-item">📊 Panel</div>
+              <div class="sm-side-item active">🎮 Kütüphane</div>
+              <div class="sm-side-item">🚀 Başlatıcı</div>
+              <div class="sm-side-item">⚙️ Profiller</div>
+              <div class="sm-side-item">💚 Sağlık</div>
+              <div class="sm-side-item">📈 İzleme</div>
+            </div>
+            <div class="sm-main">
+              <div class="sm-grid">
+                <div class="sm-game"><div class="sm-game-cover" style="background:linear-gradient(135deg,#1e3a8a,#3b82f6)"></div><div class="sm-game-name">Cyberpunk 2077</div></div>
+                <div class="sm-game"><div class="sm-game-cover" style="background:linear-gradient(135deg,#7c3aed,#a855f7)"></div><div class="sm-game-name">Fortnite</div></div>
+                <div class="sm-game"><div class="sm-game-cover" style="background:linear-gradient(135deg,#dc2626,#f97316)"></div><div class="sm-game-name">CS2</div></div>
+                <div class="sm-game"><div class="sm-game-cover" style="background:linear-gradient(135deg,#059669,#10b981)"></div><div class="sm-game-name">Valorant</div></div>
+                <div class="sm-game"><div class="sm-game-cover" style="background:linear-gradient(135deg,#0891b2,#06b6d4)"></div><div class="sm-game-name">GTA V</div></div>
+                <div class="sm-game"><div class="sm-game-cover" style="background:linear-gradient(135deg,#ca8a04,#eab308)"></div><div class="sm-game-name">Minecraft</div></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h3 class="step-title">Tek Tıkla Uygula</h3>
-        <p class="step-desc">
-          Otomatik snapshot alınır. Tüm tweak'ler güvenle uygulanır.
-        </p>
       </div>
 
-      <div class="step-arrow">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </div>
-
-      <div class="step">
-        <div class="step-number">03</div>
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-            <path d="M22 4L12 14.01l-3-3"/>
-          </svg>
+      <div class="screenshot-item" data-tab="monitor">
+        <div class="screenshot-mockup">
+          <div class="sm-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="sm-title">İzleme - GameForge</span>
+          </div>
+          <div class="sm-body">
+            <div class="sm-sidebar">
+              <div class="sm-side-item">📊 Panel</div>
+              <div class="sm-side-item">🎮 Kütüphane</div>
+              <div class="sm-side-item">🚀 Başlatıcı</div>
+              <div class="sm-side-item">⚙️ Profiller</div>
+              <div class="sm-side-item">💚 Sağlık</div>
+              <div class="sm-side-item active">📈 İzleme</div>
+            </div>
+            <div class="sm-main">
+              <div class="sm-monitor">
+                <div class="sm-monitor-row">
+                  <span>CPU</span>
+                  <div class="sm-monitor-bar"><div style="width:42%"></div></div>
+                  <span>42%</span>
+                </div>
+                <div class="sm-monitor-row">
+                  <span>GPU</span>
+                  <div class="sm-monitor-bar"><div style="width:78%"></div></div>
+                  <span>78%</span>
+                </div>
+                <div class="sm-monitor-row">
+                  <span>RAM</span>
+                  <div class="sm-monitor-bar"><div style="width:61%"></div></div>
+                  <span>61%</span>
+                </div>
+                <div class="sm-monitor-row">
+                  <span>Disk</span>
+                  <div class="sm-monitor-bar"><div style="width:25%"></div></div>
+                  <span>25%</span>
+                </div>
+              </div>
+              <div class="sm-chart big">
+                <div class="sm-chart-bar" style="height:40%"></div>
+                <div class="sm-chart-bar" style="height:65%"></div>
+                <div class="sm-chart-bar" style="height:52%"></div>
+                <div class="sm-chart-bar" style="height:88%"></div>
+                <div class="sm-chart-bar" style="height:70%"></div>
+                <div class="sm-chart-bar" style="height:95%"></div>
+                <div class="sm-chart-bar" style="height:78%"></div>
+                <div class="sm-chart-bar" style="height:85%"></div>
+                <div class="sm-chart-bar" style="height:92%"></div>
+                <div class="sm-chart-bar" style="height:75%"></div>
+                <div class="sm-chart-bar" style="height:88%"></div>
+                <div class="sm-chart-bar" style="height:98%"></div>
+              </div>
+            </div>
+          </div>
         </div>
-        <h3 class="step-title">Oyununu Oyna</h3>
-        <p class="step-desc">
-          Oyun kapanınca tüm ayarlar otomatik geri alınır. Sıfır risk.
-        </p>
+      </div>
+
+      <div class="screenshot-item" data-tab="gpu">
+        <div class="screenshot-mockup">
+          <div class="sm-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="sm-title">GPU Kontrol - GameForge</span>
+          </div>
+          <div class="sm-body">
+            <div class="sm-sidebar">
+              <div class="sm-side-item">📊 Panel</div>
+              <div class="sm-side-item">🎮 Kütüphane</div>
+              <div class="sm-side-item">🚀 Başlatıcı</div>
+              <div class="sm-side-item">⚙️ Profiller</div>
+              <div class="sm-side-item">💚 Sağlık</div>
+              <div class="sm-side-item active">📈 İzleme</div>
+            </div>
+            <div class="sm-main">
+              <div class="sm-gpu">
+                <div class="sm-gpu-title">NVIDIA RTX 4070</div>
+                <div class="sm-gpu-stats">
+                  <div class="sm-gpu-stat"><div class="sm-label">Sıcaklık</div><div class="sm-val">68°C</div></div>
+                  <div class="sm-gpu-stat"><div class="sm-label">Fan</div><div class="sm-val">52%</div></div>
+                  <div class="sm-gpu-stat"><div class="sm-label">Güç</div><div class="sm-val">180W</div></div>
+                  <div class="sm-gpu-stat"><div class="sm-label">Core</div><div class="sm-val">2505MHz</div></div>
+                </div>
+                <div class="sm-slider">
+                  <span>Fan Hızı</span>
+                  <div class="sm-slider-track"><div class="sm-slider-fill" style="width:52%"></div><div class="sm-slider-thumb" style="left:52%"></div></div>
+                  <span>52%</span>
+                </div>
+                <div class="sm-slider">
+                  <span>Güç Limiti</span>
+                  <div class="sm-slider-track"><div class="sm-slider-fill" style="width:80%"></div><div class="sm-slider-thumb" style="left:80%"></div></div>
+                  <span>80%</span>
+                </div>
+                <div class="sm-slider">
+                  <span>Core Clock</span>
+                  <div class="sm-slider-track"><div class="sm-slider-fill" style="width:65%"></div><div class="sm-slider-thumb" style="left:65%"></div></div>
+                  <span>+150</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screenshot-item" data-tab="profiles">
+        <div class="screenshot-mockup">
+          <div class="sm-titlebar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="sm-title">Profiller - GameForge</span>
+          </div>
+          <div class="sm-body">
+            <div class="sm-sidebar">
+              <div class="sm-side-item">📊 Panel</div>
+              <div class="sm-side-item">🎮 Kütüphane</div>
+              <div class="sm-side-item">🚀 Başlatıcı</div>
+              <div class="sm-side-item active">⚙️ Profiller</div>
+              <div class="sm-side-item">💚 Sağlık</div>
+              <div class="sm-side-item">📈 İzleme</div>
+            </div>
+            <div class="sm-main">
+              <div class="sm-profiles">
+                <div class="sm-profile active">
+                  <div class="sm-profile-icon">⚡</div>
+                  <div class="sm-profile-info">
+                    <div class="sm-profile-name">Rekabetçi</div>
+                    <div class="sm-profile-desc">Maksimum FPS, minimum gecikme</div>
+                  </div>
+                </div>
+                <div class="sm-profile">
+                  <div class="sm-profile-icon">🎬</div>
+                  <div class="sm-profile-info">
+                    <div class="sm-profile-name">Hikayeli</div>
+                    <div class="sm-profile-desc">Görsel kalite odaklı</div>
+                  </div>
+                </div>
+                <div class="sm-profile">
+                  <div class="sm-profile-icon">🌐</div>
+                  <div class="sm-profile-info">
+                    <div class="sm-profile-name">MMO</div>
+                    <div class="sm-profile-desc">Çoklu oyuncu optimizasyonu</div>
+                  </div>
+                </div>
+                <div class="sm-profile">
+                  <div class="sm-profile-icon">🔋</div>
+                  <div class="sm-profile-info">
+                    <div class="sm-profile-name">Dengeli</div>
+                    <div class="sm-profile-desc">Güç ve performans dengesi</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- İNDİR -->
+<!-- ===== REQUIREMENTS ===== -->
+<section class="requirements" id="requirements">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">GEREKSİNİMLER</div>
+      <h2 class="section-title">Sistem gereksinimleri</h2>
+      <p class="section-subtitle">GameForge'un çalışması için minimum ve önerilen sistem.</p>
+    </div>
+
+    <div class="req-grid">
+      <div class="req-card">
+        <div class="req-icon">🖥️</div>
+        <h3>Minimum</h3>
+        <ul class="req-list">
+          <li><span>OS</span> Windows 10 64-bit</li>
+          <li><span>CPU</span> Intel i3 / AMD Ryzen 3</li>
+          <li><span>RAM</span> 4 GB</li>
+          <li><span>Disk</span> 100 MB boş alan</li>
+          <li><span>GPU</span> DirectX 11 uyumlu</li>
+        </ul>
+      </div>
+      <div class="req-card highlighted">
+        <div class="req-badge">ÖNERİLEN</div>
+        <div class="req-icon">⚡</div>
+        <h3>Önerilen</h3>
+        <ul class="req-list">
+          <li><span>OS</span> Windows 11 64-bit</li>
+          <li><span>CPU</span> Intel i5 / AMD Ryzen 5+</li>
+          <li><span>RAM</span> 8 GB+</li>
+          <li><span>Disk</span> 500 MB boş alan (SSD)</li>
+          <li><span>GPU</span> NVIDIA GTX 1060 / AMD RX 580+</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOWNLOADS ===== -->
 <section class="downloads" id="downloads">
   <div class="container">
     <div class="download-card">
@@ -392,18 +687,26 @@
           <li>✓ Tüm özellikler açık</li>
           <li>✓ Reklam yok, izleme yok</li>
           <li>✓ Otomatik güncelleme</li>
+          <li>✓ Açık kaynak (GitHub)</li>
         </ul>
         <div class="download-actions">
-          <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/latest" class="btn btn-primary btn-lg" id="downloadBtn" target="_blank" rel="noopener">
+          <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web/releases/latest" 
+             class="btn btn-primary btn-lg" id="downloadBtn" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
             </svg>
-            Windows için İndir
+            GitHub'dan İndir
           </a>
           <a href="pages/changelog.html" class="btn btn-ghost btn-lg">
             Sürüm Notları
           </a>
         </div>
+        <p class="download-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+            <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
+          </svg>
+          GitHub Releases üzerinden güvenli indirme
+        </p>
       </div>
       <div class="download-visual">
         <div class="download-shield">
@@ -417,8 +720,8 @@
   </div>
 </section>
 
-<!-- SSS -->
-<section class="faq">
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
   <div class="container">
     <div class="section-header">
       <div class="section-badge">SSS</div>
@@ -485,11 +788,23 @@
           Hayır, sadece Windows 10/11 üzerinde çalışır. Linux desteği planlanmıyor.
         </div>
       </details>
+
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>İndirme neden GitHub'a yönlendiriyor?</span>
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </summary>
+        <div class="faq-answer">
+          GameForge açık kaynaklı bir projedir ve tüm sürümler GitHub Releases üzerinden yayınlanır. Böylece her sürümün kaynak kodu şeffaf şekilde incelenebilir.
+        </div>
+      </details>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -500,6 +815,23 @@
         <p class="footer-desc">
           Windows oyunlarınız için akıllı optimizasyon.
         </p>
+        <div class="footer-social">
+          <a href="https://github.com/balcimuhsinefe975-rgb/GameForge.Web" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M12 .5C5.37.5 0 5.78 0 12.29c0 5.21 3.44 9.63 8.21 11.19.6.11.82-.25.82-.56v-2.1c-3.34.71-4.04-1.58-4.04-1.58-.55-1.36-1.34-1.72-1.34-1.72-1.09-.73.08-.72.08-.72 1.21.08 1.84 1.22 1.84 1.22 1.07 1.8 2.81 1.28 3.5.98.11-.76.42-1.28.76-1.58-2.67-.3-5.47-1.31-5.47-5.81 0-1.28.47-2.33 1.24-3.15-.12-.3-.54-1.5.12-3.13 0 0 1.01-.32 3.3 1.2.96-.26 1.98-.4 3-.4s2.04.14 3 .4c2.29-1.52 3.3-1.2 3.3-1.2.66 1.63.24 2.83.12 3.13.77.82 1.24 1.87 1.24 3.15 0 4.51-2.8 5.51-5.48 5.8.43.36.81 1.08.81 2.18v3.23c0 .31.21.67.83.56C20.57 21.92 24 17.5 24 12.29 24 5.78 18.63.5 12 .5z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Discord">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.52.07.07 0 0 0-.08.04 13.5 13.5 0 0 0-.61 1.25 18.3 18.3 0 0 0-5.4 0 12.9 12.9 0 0 0-.62-1.25.07.07 0 0 0-.08-.04 19.8 19.8 0 0 0-4.93 1.52.06.06 0 0 0-.03.02C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.05 19.9 19.9 0 0 0 6.02 3.04.07.07 0 0 0 .08-.02c.46-.63.87-1.3 1.22-2a.07.07 0 0 0-.04-.1 13.1 13.1 0 0 1-1.87-.9.07.07 0 0 1 0-.12c.12-.1.25-.19.37-.29a.07.07 0 0 1 .07-.01c3.93 1.79 8.18 1.79 12.06 0a.07.07 0 0 1 .07.01c.12.1.25.2.37.3a.07.07 0 0 1 0 .11 12.3 12.3 0 0 1-1.87.9.07.07 0 0 0-.04.1c.36.7.77 1.37 1.22 2a.07.07 0 0 0 .08.02 19.8 19.8 0 0 0 6.03-3.04.08.08 0 0 0 .03-.05c.5-5.18-.84-9.68-3.56-13.67a.06.06 0 0 0-.03-.02zM8.02 15.33c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.95 2.42-2.15 2.42zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.21 0 2.17 1.1 2.15 2.42 0 1.34-.94 2.42-2.15 2.42z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/>
+            </svg>
+          </a>
+        </div>
         <p class="footer-copy">
           © 2026 GameGameStudios. Tüm hakları saklıdır.
         </p>
@@ -516,7 +848,7 @@
       <div class="footer-col">
         <h4>Destek</h4>
         <a href="pages/contact.html">İletişim</a>
-        <a href="pages/docs.html#faq">SSS</a>
+        <a href="#faq">SSS</a>
         <a href="pages/docs.html#troubleshoot">Sorun Giderme</a>
         <a href="pages/docs.html#plugins">Eklentiler</a>
       </div>
@@ -536,7 +868,10 @@
         <a href="#">Kullanım Şartları</a>
         <a href="#">Lisans</a>
       </div>
-      <div class="footer-version">v8.3.0</div>
+      <div class="footer-version">
+        <span class="footer-status"></span>
+        v8.3.0 • Aktif
+      </div>
     </div>
   </div>
 </footer>
